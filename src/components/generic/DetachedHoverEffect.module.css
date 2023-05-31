@@ -1,0 +1,17 @@
+.container {
+  position: relative;
+}
+
+.container > * {
+  /* Lifts children component above the pseudo selector. */
+  position: relative;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
