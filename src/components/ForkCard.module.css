@@ -1,0 +1,16 @@
+.contentStyle2 {
+  padding: 24px;
+}
+
+.hoverEffect2::before {
+  border-radius: 32px;
+  inset: 0 0;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 30px; */
+  transition-property: inset;
+  transition-duration: 200ms;
+  background-color: white;
+}
+
+.hoverEffect2:hover::before {
+  inset: -8px -8px;
+}
