@@ -2,6 +2,7 @@ import ForkCard from '@/components/ForkCard';
 import Flex from '@/components/generic/Flex';
 import Page from '@/components/generic/Page';
 import PageContentWrap from '@/components/generic/PageContentWrap';
+import Link from 'next/link';
 
 const ForkHeader = ({ children }) => <div style={{}}>{children}</div>;
 const ForkTitle = ({ children }) => (
@@ -83,7 +84,94 @@ const Example = () => {
     <Page>
       <div style={{ flexGrow: 1, marginTop: '92px' }}>
         <PageContentWrap>
-          <h1 style={{ marginBottom: '96px' }}>Start a story</h1>
+          <Flex
+            style={{
+              // justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column',
+              borderBottom: '3px solid #AACCEE',
+              marginLeft: '8%',
+              marginRight: '8%',
+              // marginBottom: '96px',
+            }}
+          >
+            <h1 style={{ marginBottom: '24px' }}>Begin a story</h1>
+            <p style={{ marginBottom: '64px' }}>and explore it's forks</p>
+
+            <span
+              style={{
+                color: '#ecf4fa',
+                background: '#667799',
+                border: '3px solid #667799',
+                padding: '8px 24px',
+                borderRadius: '32px',
+                marginBottom: '24px',
+              }}
+            >
+              <Link href={''}>Write a story</Link>
+            </span>
+            <span
+              style={{
+                border: '3px solid #AACCEE',
+                color: '#667799',
+                padding: '8px 24px',
+                borderRadius: '32px',
+              }}
+            >
+              <Link href="">Read a story</Link>
+            </span>
+            {/* <div
+              style={{
+                borderRadius: '32px',
+                border: '3px solid #AACCEE',
+                color: '#AACCEE',
+                width: '16px',
+                height: '16px',
+              }}
+            ></div> */}
+            <div
+              style={{
+                // position: 'absolute',
+                // top: '-64px',
+                backgroundColor: '#AACCEE',
+                width: '3px',
+                height: '256px',
+              }}
+            />
+            <Flex
+              style={{
+                backgroundColor: '#ecf4fa',
+                color: '#667799',
+                // width: '16px',
+                // height: '16px',
+                // padding: '8px 24px',
+                borderRadius: '32px',
+                border: '3px solid #AACCEE',
+                justifyContent: 'center',
+                alignItems: 'center',
+
+                marginBottom: '-24px',
+              }}
+            >
+              <span
+                style={{
+                  //marginRight: '16px',
+                  padding: '8px 24px',
+                }}
+              >
+                Filter stories
+              </span>
+            </Flex>
+            {/* <div
+              style={{
+                // position: 'absolute',
+                // top: '-64px',
+                backgroundColor: '#AACCEE',
+                width: '3px',
+                height: '64px',
+              }}
+            /> */}
+          </Flex>
         </PageContentWrap>
         <Flex
           style={{
@@ -104,7 +192,7 @@ const Example = () => {
                   marginRight: '24px',
                 }}
               >
-                <div
+                {/* <div
                   style={{
                     // backgroundColor: '#AACCEE',
                     width: '16px',
@@ -112,14 +200,14 @@ const Example = () => {
                     borderRadius: '32px',
                     border: '3px solid #AACCEE',
                   }}
-                />
+                /> */}
                 <div
                   style={{
                     // position: 'absolute',
                     // top: '-64px',
                     backgroundColor: '#AACCEE',
                     width: '3px',
-                    height: '64px',
+                    height: '96px',
                   }}
                 />
                 <ForkCard>

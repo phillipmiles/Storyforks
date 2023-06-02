@@ -78,7 +78,9 @@ const Example = () => {
     <Page>
       <div style={{ flexGrow: 1, marginTop: '92px' }}>
         <PageContentWrap>
-          <h1 style={{ marginBottom: '96px' }}>Start a story</h1>
+          <Flex style={{ justifyContent: 'center' }}>
+            <h1 style={{ marginBottom: '96px' }}>Start a story</h1>
+          </Flex>
 
           <Flex
             style={{
