@@ -236,7 +236,7 @@
   /* background: linear-gradient(45deg, blue, red); */
   border-color: #4b6095;
   /* box-shadow: inset 0px 0px 0px 1px #aaccee; */
-  /* box-shadow: inset 0px 0px 0px 1px #4b6095; */
+  box-shadow: inset 0px 0px 0px 1px #4b6095;
 }
 
 @keyframes btnMotion {
@@ -259,7 +259,7 @@
   }
 
   34% {
-    box-shadow: 0px -2px 0px 1px #aaccee;
+    box-shadow: 0px -3px 0px 1px #aaccee;
     border-radius: 42px 42px 24px 24px;
   }
   41% {
@@ -268,7 +268,7 @@
   }
   47% {
     box-shadow: 0px 1px 0px 1px #aaccee;
-    border-radius: 32px 32px 30px 30px;
+    border-radius: 33px 33px 30px 30px;
   }
 
   52% {
@@ -371,10 +371,10 @@
 
 .forkCardFrame:first-of-type .forkCardJourneyLine {
   border-radius: 32px 0 0 0;
-  border-left: 2px solid #4b6095;
-  border-top: 2px solid #4b6095;
+  border-left: 3px solid #4b6095;
+  border-top: 3px solid #4b6095;
   flex-grow: 1;
-  height: 64px;
+  height: 92px;
   width: 50%;
   transform: translateX(50%);
 }
@@ -382,19 +382,19 @@
 .forkCardFrame:nth-of-type(2n) .forkCardJourneyLine {
   border-radius: 0px 0px 0 0;
 
-  border-top: 2px solid #4b6095;
+  border-top: 3px solid #4b6095;
   flex-grow: 1;
-  height: 64px;
+  height: 92px;
   width: 100%;
   /* transform: translateX(-50%); */
 }
 
 .forkCardFrame:last-of-type .forkCardJourneyLine {
   border-radius: 0px 32px 0 0;
-  border-right: 2px solid #4b6095;
-  border-top: 2px solid #4b6095;
+  border-right: 3px solid #4b6095;
+  border-top: 3px solid #4b6095;
   flex-grow: 1;
-  height: 64px;
+  height: 92px;
   width: 50%;
   transform: translateX(-50%);
 }

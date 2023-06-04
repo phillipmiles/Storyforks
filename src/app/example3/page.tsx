@@ -13,10 +13,7 @@ const ForkTitle = ({ children }) => (
       textAlign: 'center',
       fontSize: '14px',
       color: '#4B6095',
-      marginTop: '16px',
       marginBottom: '16px',
-      // fontWeight: 700,
-      letterSpacing: '2px',
       // backgroundColor: '#4B6095',
       // color: 'white',
       // borderRadius: '32px 32px 0 0',
@@ -29,12 +26,8 @@ const ForkTitle = ({ children }) => (
 const ForkLabel = ({ children }) => (
   <span
     style={{
-      // fontSize: 18,
-      // marginTop: '16px',
-      marginBottom: '16px',
-      fontFamily: 'RecoletaDemo',
-      fontWeight: 700,
-      // opacity: 0.7,
+      fontSize: 16,
+      opacity: 0.7,
       flexGrow: 1,
       textAlign: 'center',
     }}
@@ -98,24 +91,6 @@ const Example = () => {
 
   return (
     <Page>
-      {/* <div
-        style={{
-          position: 'fixed',
-          background: 'linear-gradient(45deg, blue, red);',
-          width: '100%',
-          height: '16px',
-          zIndex: 500,
-        }}
-      ></div> */}
-      {/* <div
-        style={{
-          position: 'fixed',
-          background: 'linear-gradient(0deg, rgba(0,0,0,0), #ecf4fa);',
-          width: '100%',
-          height: '80px',
-          zIndex: 500,
-        }}
-      ></div> */}
       <div style={{ flexGrow: 1, marginTop: '160px' }}>
         <PageContentWrap>
           <Flex
@@ -124,7 +99,7 @@ const Example = () => {
               alignItems: 'center',
               justifyContent: 'center',
               flexDirection: 'column',
-              // borderBottom: '2px solid #AACCEE',
+              // borderBottom: '3px solid #AACCEE',
               marginLeft: '8%',
               marginRight: '8%',
             }}
@@ -154,14 +129,14 @@ const Example = () => {
                 color: '#4B6095',
               }}
             >
-              develop it together
+              and explore it's forks
             </p>
 
             <span
               style={{
                 color: '#ecf4fa',
                 background: '#4B6095',
-                border: '2px solid #4B6095',
+                border: '3px solid #4B6095',
                 padding: '8px 24px',
                 borderRadius: '32px',
                 marginBottom: '24px',
@@ -175,7 +150,7 @@ const Example = () => {
             <span
               className={s.testMotionButton}
               style={{
-                // border: '2px solid #AACCEE',
+                // border: '3px solid #AACCEE',
                 color: '#4B6095',
 
                 padding: '8px 24px',
@@ -200,7 +175,7 @@ const Example = () => {
           <div
             style={{
               backgroundColor: '#4B6095',
-              width: '2px',
+              width: '3px',
               height: 'inherit',
             }}
           />
@@ -208,86 +183,63 @@ const Example = () => {
           {/* <div
             style={{
               position: 'absolute',
-              borderBottom: '2px solid #4B6095',
+              borderBottom: '3px solid #4B6095',
               width: '32px',
               height: '32px',
-              borderRight: '2px solid #4B6095',
+              borderRight: '3px solid #4B6095',
               borderRadius: '0 0 32px 0',
-              bottom: '-2px',
+              bottom: '-3px',
               transform: 'translateX(-14.5px)',
             }}
           />
           <div
             style={{
               position: 'absolute',
-              borderBottom: '2px solid #4B6095',
+              borderBottom: '3px solid #4B6095',
               width: '32px',
               height: '32px',
-              borderLeft: '2px solid #4B6095',
+              borderLeft: '3px solid #4B6095',
               borderRadius: '0 0 0 32px',
-              bottom: '-2px',
+              bottom: '-3px',
               transform: 'translateX(14.5px)',
             }}
           /> */}
         </Flex>
-        <Flex style={{ justifyContent: 'center', marginTop: '-188px' }}>
+
+        <Flex
+          style={{
+            width: '100%',
+            justifyContent: 'center',
+          }}
+        >
           <Flex
             style={{
-              position: 'relative',
-              marginTop: '64px',
-              width: '70%',
+              width: '50%',
+              // backgroundColor: 'yellow',
               justifyContent: 'center',
-              alignItems: 'center',
-              flexDirection: 'column',
-              // backgroundColor: '#ecf4fa',
-              transform: 'translateY(82px)',
-              color: '#4B6095',
-              zIndex: 1,
-              // border: '2px solid #4B6095',
-              borderRadius: '24px',
+              // border: '3px solid #4b6095',
+              // borderBottom: 0,
+              // backgroundColor: '#4b6095',
+              color: '#4b6095',
+              borderRadius: '36px 36px 0 0',
+              fontSize: '16px',
               padding: '24px',
             }}
           >
-            <p
-              style={{
-                fontSize: '18px',
-                marginBottom: '16px',
-                border: '2px solid #4B6095',
-                padding: '8px 24px',
-                backgroundColor: '#ecf4fa',
-                borderRadius: '80px',
-                minWidth: '220px',
-                textAlign: 'center',
-              }}
-            >
-              Filter stories
-            </p>
-            {/* <Flex
-              style={{
-                // width: '50%',
-                // backgroundColor: 'yellow',
-                justifyContent: 'center',
-                // border: '2px solid #4b6095',
-                // borderBottom: 0,
-                // backgroundColor: '#4b6095',
-                color: '#4b6095',
-                borderRadius: '36px 36px 0 0',
-                fontSize: '16px',
-                // padding: '24px',
-              }}
-            >
-              <Flex>
-                <span style={{ marginRight: '16px', marginLeft: '16px' }}>
-                  Label: Any
-                </span>
-                <span style={{ marginRight: '16px', marginLeft: '16px' }}>
-                  Show visited
-                </span>
-                <span style={{ marginRight: '16px', marginLeft: '16px' }}>
-                  Show mature content
-                </span>
-              </Flex>
-            </Flex> */}
+            <Flex>
+              {/* <span style={{ marginRight: '16px', marginLeft: '16px' }}>
+                Genre: Any
+              </span> */}
+              <span style={{ marginRight: '16px', marginLeft: '16px' }}>
+                Label: Any
+              </span>
+              <span style={{ marginRight: '16px', marginLeft: '16px' }}>
+                Show visited
+              </span>
+              <span style={{ marginRight: '16px', marginLeft: '16px' }}>
+                Show mature content
+              </span>
+            </Flex>
           </Flex>
         </Flex>
         <Flex
@@ -295,7 +247,6 @@ const Example = () => {
             // paddingLeft: '64px',
             // paddingRight: '64px',
             justifyContent: 'center',
-            marginTop: '16px',
           }}
         >
           {data &&
@@ -308,25 +259,11 @@ const Example = () => {
                   alignItems: 'center',
                   width: '28%',
                   position: 'relative',
-
                   // marginLeft: '24px',
                   // marginRight: '24px',
                 }}
               >
-                {/* <div
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    backgroundColor: '#4b6095',
-                    width: '4px',
-                    height: '4px',
-                    borderRadius: '32px',
-                    marginBottom: '16px',
-                  }}
-                /> */}
-                {index == 0 && <div className={s.forkCardJourneyLine}></div>}
+                {index == 0 && <Flex className={s.forkCardJourneyLine} />}
                 {index == 1 && (
                   <>
                     <div
@@ -335,7 +272,7 @@ const Example = () => {
                         top: 0,
                         left: 0,
                         right: 0,
-                        borderTop: '2px solid #4b6095',
+                        borderTop: '3px solid #4b6095',
                       }}
                     />
                     <Flex style={{ justifyContent: 'center' }}>
@@ -344,8 +281,8 @@ const Example = () => {
                           // position: 'absolute',
                           // top: '-64px',
                           backgroundColor: '#4b6095',
-                          width: '2px',
-                          height: '108px',
+                          width: '3px',
+                          height: '96px',
                         }}
                       />
                     </Flex>
@@ -353,7 +290,7 @@ const Example = () => {
                 )}
                 {index == 2 && <Flex className={s.forkCardJourneyLine} />}
                 <div style={{ marginLeft: '24px', marginRight: '24px' }}>
-                  <ForkCard style={{}}>
+                  <ForkCard>
                     <ForkHeader>
                       <ForkTitle>{item.label}</ForkTitle>
                       <Flex>
@@ -362,11 +299,10 @@ const Example = () => {
                     </ForkHeader>
                     <div
                       style={{
-                        textOverflow: 'ellipsis',
                         overflow: 'hidden',
                         position: 'relative',
                         marginTop: '16px',
-                        // marginBottom: '16px',
+                        marginBottom: '16px',
                         // padding: '32px',
                       }}
                     >
@@ -382,7 +318,9 @@ const Example = () => {
                             'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%)',
                         }}
                       /> */}
-                      <p style={{ fontSize: '16px' }}>{item.sample}</p>
+                      <p style={{ fontSize: '16px', color: '#556677' }}>
+                        {item.sample}
+                      </p>
                     </div>
                     <Flex
                       style={{
@@ -390,7 +328,6 @@ const Example = () => {
                         alignItems: 'center',
                         color: '#4b6095',
                         flexGrow: 1,
-                        paddingTop: '24px',
 
                         // borderTop: '1px solid #AACCEE',
                         // paddingTop: '16px',
@@ -413,106 +350,51 @@ const Example = () => {
                   </ForkCard>
                 </div>
 
-                {/* <div style={{ width: '100px', height: '150px' }}>
-                  <svg viewBox="0 0 100 150">
-                    <path
-                      fill="none"
-                      stroke="#4b6095"
-                      stroke-width="3"
-                      d="M 50 0, l 0 50, a 20 20 0 0 1 -20 20, a 20 20 0 0 0 -20 20, l 0 20, M 50 50, a 20 20 0 0 0 20 20, a 20 20 0 0 1 20 20, l 0 20"
-                    />
-                  </svg>
-                </div> */}
-
-                {/* <div style={{ width: '50px', height: '150px' }}>
-                  <svg viewBox="0 0 50 150">
-                    <path
-                      fill="none"
-                      stroke="#4b6095"
-                      stroke-width="3"
-                      d="M 25 0, l 0 50, a 20 20 0 0 1 20 20, l 0 30,   M 25 50, a 20 20 0 0 0 -20 20, l 0 30"
-                    />
-                  </svg>
-                </div> */}
                 <div
                   style={{
-                    width: '2px',
-                    height: '40px',
+                    // position: 'absolute',
+                    // top: '-64px',
                     backgroundColor: '#4b6095',
-                    marginBottom: '8px',
-                  }}
-                />
-                {/* <div
-                  style={{
-                    width: '2px',
-                    height: '9px',
-                    backgroundColor: '#4b6095',
-                    marginBottom: '5px',
+                    width: '3px',
+                    height: '64px',
                   }}
                 />
                 <div
                   style={{
-                    width: '2px',
-                    height: '6px',
                     backgroundColor: '#4b6095',
-                    marginBottom: '6px',
-                  }}
-                />
-                <div
-                  style={{
-                    width: '2px',
-                    height: '5px',
-                    backgroundColor: '#4b6095',
-                    marginBottom: '7px',
-                  }}
-                /> */}
-                <div
-                  style={{
-                    backgroundColor: '#4b6095',
-                    width: '4px',
-                    height: '4px',
+                    width: '8px',
+                    height: '8px',
                     borderRadius: '32px',
-                    marginBottom: '8px',
+                    marginBottom: '16px',
                   }}
                 />
                 <div
                   style={{
                     backgroundColor: '#4b6095',
-                    width: '4px',
-                    height: '4px',
+                    width: '8px',
+                    height: '8px',
                     borderRadius: '32px',
-                    marginBottom: '8px',
-                    opacity: 0.9,
-                  }}
-                />
-                <div
-                  style={{
-                    backgroundColor: '#4b6095',
-                    width: '4px',
-                    height: '4px',
-                    borderRadius: '32px',
-                    marginBottom: '8px',
+                    marginBottom: '16px',
                     opacity: 0.8,
                   }}
                 />
                 <div
                   style={{
                     backgroundColor: '#4b6095',
-                    width: '4px',
-                    height: '4px',
-                    borderRadius: '8px',
-                    marginBottom: '8px',
-                    opacity: 0.6,
+                    width: '8px',
+                    height: '8px',
+                    borderRadius: '32px',
+                    marginBottom: '16px',
+                    opacity: 0.7,
                   }}
                 />
                 <div
                   style={{
                     backgroundColor: '#4b6095',
-                    width: '4px',
-                    height: '4px',
-                    borderRadius: '8px',
-                    marginBottom: '8px',
-                    opacity: 0.4,
+                    width: '8px',
+                    height: '8px',
+                    borderRadius: '32px',
+                    opacity: 0.5,
                   }}
                 />
               </Flex>
@@ -521,10 +403,9 @@ const Example = () => {
         <PageContentWrap>
           <Flex
             style={{
-              paddingTop: '64px',
+              paddingTop: '48px',
               justifyContent: 'center',
-              marginBottom: '64px',
-              color: '#4b6095',
+              opacity: 0.6,
             }}
           >
             <p>Show all stories</p>

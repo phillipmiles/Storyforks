@@ -144,7 +144,16 @@ const Example = () => {
                   marginBottom: '48px',
                 }}
               >
-                <p style={{ margin: 0 }}>By Katie Bloom</p>
+                <p
+                  style={{
+                    margin: 0,
+                    textAlign: 'center',
+                    color: '#4B6095',
+                    // textTransform: 'uppercase',
+                  }}
+                >
+                  By Katie Bloom
+                </p>
               </div>
 
               <p>
@@ -341,41 +350,6 @@ const Example = () => {
                   }}
                 />
               </Flex>
-              {/* <Flex style={{ justifyContent: 'center', width: '50%' }}>
-                <div
-                  style={{
-                    backgroundColor: '#AACCEE',
-                    width: '3px',
-                    height: '92px',
-                    top: 0,
-                  }}
-                />
-                <Flex
-                  style={{
-                    position: 'absolute',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
-                  <Flex
-                    style={{
-                      flexShrink: 0,
-                      borderRadius: '100px',
-                      backgroundColor: 'white',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      padding: '16px',
-                      marginTop: '64px',
-                      marginBottom: '64px',
-                    }}
-                  >
-                    <span style={{ marginRight: '16px', marginLeft: '16px' }}>
-                      Fork story
-                    </span>
-                  </Flex>
-                </Flex>
-              </Flex> */}
             </Flex>
           </PageContentWrap>
 

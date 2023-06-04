@@ -18,19 +18,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Flex style={{ height: '64px', alignItems: 'center', padding: '40px' }}>
+        {/* <Flex style={{ height: '64px', alignItems: 'center', padding: '40px' }}>
           StoryForks
-        </Flex>
+        </Flex> */}
         <main>{children}</main>
-        <Flex
+        {/* <Flex
           style={{
             height: '200px',
             justifyContent: 'center',
             alignItems: 'center',
           }}
         >
-          {/* Footer */}
-        </Flex>
+          Footer
+        </Flex> */}
       </body>
     </html>
   );
