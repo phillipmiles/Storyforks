@@ -12,5 +12,5 @@
 }
 
 .hoverEffect2:hover::before {
-  inset: -8px -8px;
+  inset: -4px -4px;
 }

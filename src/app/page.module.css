@@ -364,37 +364,3 @@
     transform: scale(1) translateY(0px);
   }
 }
-
-.forkCardJourneyLine {
-  border-color: #4b6095;
-}
-
-.forkCardFrame:first-of-type .forkCardJourneyLine {
-  border-radius: 32px 0 0 0;
-  border-left: 2px solid #4b6095;
-  border-top: 2px solid #4b6095;
-  flex-grow: 1;
-  height: 64px;
-  width: 50%;
-  transform: translateX(50%);
-}
-
-.forkCardFrame:nth-of-type(2n) .forkCardJourneyLine {
-  border-radius: 0px 0px 0 0;
-
-  border-top: 2px solid #4b6095;
-  flex-grow: 1;
-  height: 64px;
-  width: 100%;
-  /* transform: translateX(-50%); */
-}
-
-.forkCardFrame:last-of-type .forkCardJourneyLine {
-  border-radius: 0px 32px 0 0;
-  border-right: 2px solid #4b6095;
-  border-top: 2px solid #4b6095;
-  flex-grow: 1;
-  height: 64px;
-  width: 50%;
-  transform: translateX(-50%);
-}

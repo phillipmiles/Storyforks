@@ -14,7 +14,7 @@ const ForkCard = ({ style, children, ...props }) => {
           background: 'white',
           position: 'relative',
           width: '100%',
-          height: '400px',
+          // height: '400px',
           flexShrink: 0,
           borderRadius: '24px',
           flexDirection: 'column',
