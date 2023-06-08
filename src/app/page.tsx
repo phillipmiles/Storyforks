@@ -6,6 +6,15 @@ import s from './page.module.css';
 import StoryOption from '@/components/StoryOption';
 import StoryOptionLineIn from '@/components/StoryOptionLineIn';
 import StoryOptionLineOut from '@/components/StoryOptionLineOut';
+import {
+  ArrowRight,
+  Book,
+  EditPencil,
+  Filter,
+  NavArrowRight,
+} from 'iconoir-react';
+import Button from '@/components/Button';
+import GenericButton from '@/components/generic/Button';
 
 const Example = () => {
   const data = [
@@ -99,42 +108,49 @@ const Example = () => {
               develop it together
             </p>
 
-            <span
+            <Flex
               style={{
-                color: '#ecf4fa',
-                background: 'var(--primary-color)',
-                border: '2px solid var(--primary-color)',
-                padding: '8px 24px',
-                borderRadius: '32px',
+                height: '48px',
+                width: '100%',
+                justifyContent: 'center',
                 marginBottom: '24px',
-                width: '100%',
-                maxWidth: '220px',
-                textAlign: 'center',
               }}
             >
-              <Link href={''}>Write a story</Link>
-            </span>
-            <span
-              className={s.testMotionButton}
+              <Button
+                href="/"
+                className={s.callToAction1}
+                textClassName={s.callToAction1Inner}
+              >
+                {/* <EditPencil /> */}
+                Write a story
+              </Button>
+            </Flex>
+            <Flex
               style={{
-                color: 'var(--primary-color)',
-                padding: '8px 24px',
-                borderRadius: '32px',
-                position: 'relative',
+                height: '48px',
+                justifyContent: 'center',
                 width: '100%',
-                maxWidth: '220px',
-                textAlign: 'center',
               }}
             >
-              <Link href="">Read a story</Link>
-            </span>
+              <Button
+                className={s.callToAction2}
+                textClassName={s.callToAction1Inner}
+                outline
+              >
+                {/* <Book /> */}
+                Read a story
+              </Button>
+            </Flex>
           </Flex>
         </PageContentWrap>
         <Flex
+          className={s.callToActionLineOut}
           style={{
             justifyContent: 'center',
             position: 'relative',
             height: '256px',
+            flexDirection: 'column',
+            alignItems: 'center',
           }}
         >
           <div
@@ -144,6 +160,7 @@ const Example = () => {
               height: 'inherit',
             }}
           />
+          <StoryOptionLineOut />
           {/* Curvies */}
           {/* <div
             style={{
@@ -172,39 +189,61 @@ const Example = () => {
         </Flex>
         <Flex
           style={{
+            marginTop: '64px',
             justifyContent: 'center',
             position: 'relative',
+            marginBottom: '96px',
           }}
         >
           <Flex
             style={{
               position: 'absolute',
+              // flexDirection: 'row',
               left: '50%',
               top: '50%',
               transform: 'translate(-50%, -50%)',
-              width: '70%',
+              // width: '50%',
               justifyContent: 'center',
+              // justifyContent: 'space-between',
               alignItems: 'center',
-              flexDirection: 'column',
+              // flexDirection: 'column',
               color: 'var(--primary-color)',
               zIndex: 1,
-              borderRadius: '32px',
+              borderRadius: '8px 8px 0 0',
+              backgroundColor: 'white',
+              backgroundColor: 'var(--background-color)',
+              // border: '2px solid var(--primary-color)',
+              padding: '64px 96px',
             }}
           >
-            <p
+            {/* <span
               style={{
+                display: 'flex',
+                justifyContent: 'center',
                 fontSize: '18px',
                 margin: 0,
-                border: '2px solid var(--primary-color)',
-                padding: '8px 24px',
-                backgroundColor: 'var(--background-color)',
-                borderRadius: '80px',
+
+                // padding: '8px 24px',
+                // backgroundColor: 'var(--background-color)',
+
+                // borderRadius: '80px',
                 minWidth: '220px',
                 textAlign: 'center',
               }}
-            >
-              Filter stories
-            </p>
+            > */}
+            {/* <Filter style={{ marginRight: '8px' }} />  */}
+            {/* <span>Select a story to start</span> */}
+            <span style={{ fontSize: '24px' }}>
+              Try one of these stories...
+            </span>
+            {/* <span>Show filters</span> */}
+            {/* <span style={{ margin: '0 16px' }}>Labels</span>
+            <span style={{ margin: '0 16px' }}>Show visited</span>
+            <span style={{ margin: '0 16px' }}>Show mature content (MATURE CONTENT GOES INTO ACCOUT SETTINGS)</span> */}
+            {/* <span>
+              Filter stories <NavArrowRight style={{ marginLeft: '4px' }} />
+            </span> */}
+            {/* </span> */}
             {/* <Flex
               style={{
                 // width: '50%',
@@ -227,7 +266,7 @@ const Example = () => {
                   Show visited
                 </span>
                 <span style={{ marginRight: '16px', marginLeft: '16px' }}>
-                  Show mature content
+                  Show mature content (MATURE CONTENT GOES INTO ACCOUT SETTINGS)
                 </span>
               </Flex>
             </Flex> */}
@@ -253,7 +292,7 @@ const Example = () => {
                     alignItems: 'center',
                   }}
                 >
-                  <StoryOptionLineIn curveDirection={curveDirection} />
+                  {/* <StoryOptionLineIn curveDirection={curveDirection} /> */}
                   <StoryOption option={item} isStory />
                   <StoryOptionLineOut />
                 </Flex>
@@ -265,11 +304,65 @@ const Example = () => {
             style={{
               paddingTop: '64px',
               justifyContent: 'center',
-              marginBottom: '64px',
               color: 'var(--primary-color)',
             }}
           >
-            <p>Show all stories</p>
+            <p
+              style={{
+                marginTop: '16px',
+                paddingLeft: '124px',
+                paddingRight: '124px',
+                textDecoration: 'underline',
+              }}
+            >
+              Browse all 1274 stories
+            </p>
+          </Flex>
+          {/* <Flex
+            style={{
+              height: '48px',
+              width: '100%',
+              justifyContent: 'center',
+              marginTop: '64px',
+              marginBottom: '24px',
+            }}
+          >
+            <Button
+              href="/"
+              outline
+              className={s.callToAction1}
+              textClassName={s.callToAction1Inner}
+            >
+              Browse all 1246 stories
+            </Button>
+          </Flex> */}
+          <p
+            style={{
+              // marginTop: '16px',
+              paddingLeft: '124px',
+              paddingRight: '124px',
+              textAlign: 'center',
+              color: 'var(--primary-color)',
+              marginBottom: '24px',
+            }}
+          >
+            Or
+          </p>
+          <Flex
+            style={{
+              height: '48px',
+              width: '100%',
+              justifyContent: 'center',
+              marginBottom: '164px',
+            }}
+          >
+            <Button
+              href="/"
+              className={s.callToAction1}
+              textClassName={s.callToAction1Inner}
+            >
+              Write a story
+            </Button>
           </Flex>
         </PageContentWrap>
       </div>

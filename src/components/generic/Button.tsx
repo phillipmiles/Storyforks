@@ -2,29 +2,54 @@ import Link from 'next/link';
 import s from './Button.module.css';
 
 interface Props {
-  children: JSX.Element | string | Array<JSX.Element>;
-  href: string;
-  classNameButton?: string;
-  style: object;
+  children: string | JSX.Element | JSX.Element[];
+  href?: string;
+  icon?: JSX.Element;
+  onClick?: Function;
+  className?: string;
+  textClassName?: string;
+  style?: object;
 }
 
 const Button = ({
   children,
   href,
-  classNameButton,
+  onClick,
+  className,
   style,
+  textClassName,
   ...props
 }: Props): JSX.Element => {
-  return (
-    <Link
-      href={href}
-      className={`${s.button} ${classNameButton}`}
-      style={style}
-      {...props}
-    >
-      {children}
-    </Link>
-  );
+  // const text = () => {
+  //   if (textClassName) {
+  //     return <span className={textClassName}>{children}</span>;
+  //   } else {
+  //     return <>{children}</>;
+  //   }
+  // };
+
+  if (href !== undefined) {
+    return (
+      <Link
+        href={href}
+        className={`${s.button} ${className}`}
+        style={style}
+        {...props}
+      >
+        <span className={`${s.textClassName} ${textClassName}`}>
+          {children}
+        </span>
+      </Link>
+    );
+  } else {
+    return (
+      <button className={`${s.button} ${className}`} style={style}>
+        <span className={`${s.textClassName} ${textClassName}`}>
+          {children}
+        </span>
+      </button>
+    );
+  }
 };
 
 export default Button;

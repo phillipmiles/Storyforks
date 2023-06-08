@@ -324,7 +324,7 @@
 .title {
   opacity: 1;
   transform: scale(1);
-  animation: fadeIn 2000ms ease-out;
+  animation: fadeIn 1000ms ease-out;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -333,7 +333,7 @@
 .subTitles {
   opacity: 1;
   transform: scale(1);
-  animation: fadeInLate 2000ms ease-out;
+  animation: fadeInLate 1000ms ease-out;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -362,5 +362,101 @@
   100% {
     opacity: 1;
     transform: scale(1) translateY(0px);
+  }
+}
+
+a.callToAction1 {
+  border: 2px solid var(--primary-color);
+  padding: 8px 0px;
+  border-radius: 220px;
+  /* margin-bottom: 24px; */
+  width: 100%;
+  max-width: 280px;
+  animation: appear;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+  position: relative;
+  white-space: nowrap;
+}
+
+button.callToAction2 {
+  white-space: nowrap;
+  padding: 8px 0px;
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  animation: appear;
+  animation-delay: 100ms;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: backwards;
+  /* width: 48px;
+  height: 48px; */
+}
+
+.callToAction1Inner {
+  animation-name: test;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: backwards;
+}
+
+.callToAction2Inner {
+  animation-name: test;
+  animation-delay: 100ms;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: backwards;
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0%);
+    width: 48px;
+    height: 48px;
+  }
+  50% {
+    transform: scale(100%);
+    width: 48px;
+    height: 48px;
+  }
+  /* 50% {
+    transform: scale(100%);
+    width: 48px;
+  } */
+  100% {
+    transform: scale(100%);
+    /* width: 280px; */
+  }
+}
+
+@keyframes test {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.callToActionLineOut {
+  animation-name: lineOut;
+  animation-delay: 500ms;
+  animation-duration: 200ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: backwards;
+  transform-origin: 0 0;
+}
+
+@keyframes lineOut {
+  0% {
+    transform: scaleY(0%);
+  }
+  100% {
+    transform: scaleY(100%);
   }
 }

@@ -13,7 +13,8 @@ const StoryOptionLineIn = ({ curveDirection, ...props }: Props) => {
   }
   return (
     <Flex className={s.container} style={{}} {...props}>
-      {capDirection && <div className={`${s.cap} ${capDirection}`} />}
+      {/* {capDirection && <div className={`${s.cap} ${capDirection}`} />} */}
+      {capDirection && <div className={`${s.cap}`} />}
       <div className={s.line} />
       {/* <div className={s.join} /> */}
     </Flex>

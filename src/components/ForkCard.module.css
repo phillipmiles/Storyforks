@@ -1,5 +1,17 @@
 .contentStyle2 {
   padding: 32px;
+  border-top: 2px solid #4b6095;
+  border-left: 2px solid #4b6095;
+  border-right: 2px solid #4b6095;
+  border-bottom: 8px solid #4b6095;
+  transition: border 100ms, transform 100ms;
+  cursor: pointer;
+  transform: translateY(0px);
+}
+
+.contentStyle2:hover {
+  border-bottom-width: 2px;
+  transform: translateY(2px);
 }
 
 .hoverEffect2::before {

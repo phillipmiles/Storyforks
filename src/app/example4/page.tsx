@@ -526,7 +526,7 @@ const Example = () => {
                 color: 'var(--primary-color)',
               }}
             >
-              <p>Show all of this story's forks</p>
+              <p>Show all 43 forks</p>
             </Flex>
           </PageContentWrap>
 

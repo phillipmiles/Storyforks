@@ -27,6 +27,9 @@ export default function RootLayout({
             height: '200px',
             justifyContent: 'center',
             alignItems: 'center',
+            // backgroundColor: 'var(--primary-color)',
+            // backgroundColor: 'white',
+            // color: 'white',
           }}
         >
           Footer

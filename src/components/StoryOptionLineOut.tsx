@@ -13,37 +13,37 @@ const StoryOptionLineOut = ({ curveDirection, ...props }: Props) => (
       <div
         className={s.dot}
         style={{
-          animationDelay: '6000ms',
+          animationDelay: '-6000ms',
         }}
       />
       <div
         className={s.dot}
         style={{
-          animationDelay: '5000ms',
+          animationDelay: '-5000ms',
         }}
       />
       <div
         className={s.dot}
         style={{
-          animationDelay: '4000ms',
+          animationDelay: '-4000ms',
         }}
       />
       <div
         className={s.dot}
         style={{
-          animationDelay: '3000ms',
+          animationDelay: '-3000ms',
         }}
       />
       <div
         className={s.dot}
         style={{
-          animationDelay: '2000ms',
+          animationDelay: '-2000ms',
         }}
       />
       <div
         className={s.dot}
         style={{
-          animationDelay: '1000ms',
+          animationDelay: '-1000ms',
         }}
       />
       <div
