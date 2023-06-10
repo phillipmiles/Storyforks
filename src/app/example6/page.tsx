@@ -86,13 +86,15 @@ const Example = () => {
             style={{
               margin: '32px',
               width: '100%',
+              // height: '100%',
+              // backgroundColor: 'white',
               justifyContent: 'center',
               alignItems: 'center',
               position: 'relative',
               // border: '3px solid var(--primary-color)',
             }}
           >
-            {/* <div
+            <div
               style={{
                 position: 'absolute',
                 width: '32px',
@@ -140,6 +142,8 @@ const Example = () => {
                 bottom: '8px',
               }}
             />
+            {/* Borders */}
+
             <div
               style={{
                 position: 'absolute',
@@ -150,6 +154,8 @@ const Example = () => {
                 height: '2px',
               }}
             />
+
+            {/*  */}
             <div
               style={{
                 position: 'absolute',
@@ -181,83 +187,99 @@ const Example = () => {
                 backgroundColor: 'var(--primary-color)',
                 width: '2px',
               }}
-            /> */}
+            />
 
             {/* <HeroBackground /> */}
             {/* <PageContentWrap> */}
-            <Flex
-              style={{
-                // justifyContent: 'center',
-                // marginTop: '160px',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'column',
-                // borderBottom: '2px solid #AACCEE',
-                marginLeft: '8%',
-                marginRight: '8%',
-                // backgroundColor: 'red',
-              }}
-            >
-              <p
-                className={s.title}
-                style={{
-                  letterSpacing: '4px',
-                  marginBottom: '56px',
-                  color: 'var(--primary-color)',
-                }}
-                // className={s.subTitles}
-              >
-                — STORYFORKS —
-              </p>
-              <h1
-                className={s.title}
-                style={{ marginBottom: '16px', fontSize: '80px' }}
-              >
-                Begin a story
-              </h1>
-              <p
-                className={s.subTitles}
-                style={{
-                  marginBottom: '92px',
-                  fontSize: '24px',
-                  color: 'var(--primary-color)',
-                }}
-              >
-                develop it together
-              </p>
-
+            <Flex style={{ justifyContent: 'center' }}>
               <Flex
                 style={{
-                  height: '48px',
-                  width: '100%',
+                  width: '40%',
+                  // justifyContent: 'center',
+                  // marginTop: '160px',
+                  alignItems: 'center',
                   justifyContent: 'center',
-                  marginBottom: '24px',
+                  flexDirection: 'column',
+                  marginLeft: '8%',
+                  // marginRight: '8%',
                 }}
               >
-                <Button
-                  href="/"
-                  className={s.callToAction1}
-                  textClassName={s.callToAction1Inner}
+                <p
+                  className={s.title}
+                  style={{
+                    letterSpacing: '4px',
+                    marginBottom: '56px',
+                    color: 'var(--primary-color)',
+                  }}
+                  // className={s.subTitles}
                 >
-                  {/* <EditPencil /> */}
-                  Write a story
-                </Button>
+                  — STORYFORKS —
+                </p>
+                <h1
+                  className={s.title}
+                  style={{ marginBottom: '16px', fontSize: '80px' }}
+                >
+                  Begin a story
+                </h1>
+                <p
+                  className={s.subTitles}
+                  style={{
+                    marginBottom: '92px',
+                    fontSize: '24px',
+                    color: 'var(--primary-color)',
+                  }}
+                >
+                  develop it together
+                </p>
+
+                <Flex
+                  style={{
+                    height: '48px',
+                    width: '100%',
+                    justifyContent: 'center',
+                    marginBottom: '24px',
+                  }}
+                >
+                  <Button
+                    href="/"
+                    className={s.callToAction1}
+                    textClassName={s.callToAction1Inner}
+                  >
+                    {/* <EditPencil /> */}
+                    Write a story
+                  </Button>
+                </Flex>
+                <Flex
+                  style={{
+                    height: '48px',
+                    justifyContent: 'center',
+                    width: '100%',
+                  }}
+                >
+                  <Button
+                    className={s.callToAction2}
+                    textClassName={s.callToAction1Inner}
+                    outline
+                  >
+                    {/* <Book /> */}
+                    Read a story
+                  </Button>
+                </Flex>
               </Flex>
               <Flex
                 style={{
-                  height: '48px',
-                  justifyContent: 'center',
-                  width: '100%',
+                  width: '50%',
+                  padding: '72px',
+                  flexDirection: 'column',
+                  alignItems: 'center',
                 }}
               >
-                <Button
-                  className={s.callToAction2}
-                  textClassName={s.callToAction1Inner}
-                  outline
-                >
-                  {/* <Book /> */}
-                  Read a story
-                </Button>
+                <StoryOption
+                  option={data[0]}
+                  isStory
+                  style={{ maxHeight: 'none' }}
+                />
+                {/* <StoryOptionLineOut /> */}
               </Flex>
             </Flex>
             {/* </PageContentWrap> */}
@@ -267,8 +289,7 @@ const Example = () => {
         <Flex
           className={s.callToActionLineOut}
           style={{
-            marginTop: '-136px',
-            marginBottom: '72px',
+            // marginTop: '-114px',
             justifyContent: 'center',
             position: 'relative',
             height: '256px',

@@ -1,0 +1,32 @@
+.forkCardFrame::before {
+  content: '';
+  flex-grow: 1;
+}
+
+.forkCardFrame:first-of-type::before {
+  border-radius: 24px 0 0 0;
+  border-left: 2px solid #4b6095;
+  border-top: 2px solid #4b6095;
+  height: 64px;
+  width: 50%;
+  transform: translateX(50%);
+}
+
+.forkCardFrame:nth-of-type(2n)::before {
+  content: '';
+  border-radius: 0px 0px 0 0;
+  border-top: 2px solid #4b6095;
+  height: 64px;
+  width: 100%;
+  /* background: red; */
+}
+
+.forkCardFrame:last-of-type::before {
+  content: '';
+  border-radius: 0px 24px 0 0;
+  border-right: 2px solid #4b6095;
+  border-top: 2px solid #4b6095;
+  height: 64px;
+  width: 50%;
+  transform: translateX(-50%);
+}
