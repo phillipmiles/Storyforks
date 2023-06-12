@@ -61,16 +61,61 @@ const Example = () => {
               // padding: '64px 128px',
             }}
           >
-            <p style={{ marginBottom: '32px' }}>New story</p>
+            <p
+              style={{
+                textAlign: 'center',
+                fontSize: '16px',
+                textTransform: 'uppercase',
+                letterSpacing: 1,
+                color: '#445464',
+                marginBottom: '32px',
+              }}
+            >
+              {/* {item.label} */}
+              Chapter 2
+            </p>
             <h2
               style={{
                 textAlign: 'center',
-
+                marginBottom: '32px',
+                fontSize: '48px',
                 // color: 'var(--primary-color)',
               }}
             >
               {data[0].title}
             </h2>
+            <Flex
+              style={{
+                justifyContent: 'center',
+                marginBottom: '24px',
+                color: '#445464',
+              }}
+            >
+              <span
+                style={{
+                  fontSize: '16px',
+                  textAlign: 'center',
+                }}
+              >
+                By {data[0].author}
+              </span>
+              <span
+                style={{
+                  margin: '0 8px',
+                  fontSize: '16px',
+                }}
+              >
+                |
+              </span>
+              <span
+                style={{
+                  fontSize: '16px',
+                  textAlign: 'center',
+                }}
+              >
+                {data[0].label}
+              </span>
+            </Flex>
 
             {/* <p
                     style={{
@@ -91,25 +136,23 @@ const Example = () => {
             style={{
               // backgroundColor: 'var(--background-light-color)',
               // borderTop: '1px solid var(--primary-light-color)',
-              borderBottom: '1px solid var(--primary-color)',
+              borderTop: '2px solid #A4B4C4',
+              borderBottom: '2px solid #A4B4C4',
               // borderRadius: '24px',
-              padding: '24px',
-              marginLeft: '-24px',
-              marginRight: '-24px',
+              padding: '32px 48px',
+              marginLeft: '-48px',
+              marginRight: '-48px',
               marginBottom: '64px',
             }}
           >
-            <p style={{ color: 'var(--primary-color)', fontWeight: '500' }}>
-              Story Prompt:
-            </p>
-            <p>
+            <p style={{ fontWeight: '500' }}>Story Prompt:</p>
+            <p style={{ margin: 0 }}>
               Ash Ketchum – trainer of Pallet Town, winner of the Orange League
               and increasingly close runner up in five other regional
               tournaments – was... confused.
             </p>
           </div>
 
-          <p style={{ textAlign: 'center', marginBottom: '48px' }}>Chapter 1</p>
           <p>
             Ash Ketchum – trainer of Pallet Town, winner of the Orange League
             and increasingly close runner up in five other regional tournaments
@@ -193,17 +236,17 @@ const Example = () => {
           </p>
           <div
             style={{
-              borderTop: '1px solid #CCDDEE',
+              marginLeft: '-48px',
+              marginRight: '-48px',
+              borderTop: '2px solid #A4B4C4',
               marginTop: '48px',
               paddingTop: '48px',
             }}
-          >
-            <p>Recommend fork</p>
-            <p>Apply genre to fork</p>
-            <p>Suggest this fork as an end of the story</p>
-            <p>Bookmark fork</p>
-            <p>Mark fork as mature</p>
-          </div>
+          ></div>
+          <p>Recommend chapter</p>
+          <p>Suggest this chapter as an end of the story</p>
+          <p>Bookmark chapter</p>
+          <p>Mark chapter as mature</p>
         </div>
       </PageContentWrap>
       <div
@@ -217,7 +260,7 @@ const Example = () => {
           Chapter 2
         </h2>
         <p style={{ textAlign: 'center', color: 'white', marginTop: '24px' }}>
-          Choose a fork in the story below to continue reading
+          Choose a fork in the story below to continue reading.
         </p>
         {/* <PageContentWrap>
           <Flex
@@ -341,6 +384,7 @@ const Example = () => {
                     style={{
                       justifyContent: 'center',
                       marginBottom: '24px',
+                      color: '#445464',
                     }}
                   >
                     <span
@@ -457,11 +501,11 @@ const Example = () => {
           >
             <p
               style={{
-                // marginTop: '16px',
+                marginTop: '16px',
                 paddingLeft: '124px',
                 paddingRight: '124px',
                 textDecoration: 'underline',
-                marginBottom: '48px',
+                marginBottom: '96px',
               }}
             >
               Browse all 1274 forks
