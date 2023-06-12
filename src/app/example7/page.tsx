@@ -21,7 +21,7 @@ import Image from 'next/image';
 const Example = () => {
   const data = [
     {
-      title: 'derp',
+      title: 'A Hill To Die On',
       author: 'Katie Wood',
       label: 'Recommended',
       genres: ['Drama', 'Horror'],
@@ -29,15 +29,15 @@ const Example = () => {
         'Eight, playing in the copse of trees at the end of the road that led to the sea. It was all one big argument with Gary, more than playing... but, as this memory played out like the others, there was a glimpse of something in the trees. Barely a flash, but the memory stopped. And Ash marvelled. This was not what he had expected to find in his childhood.',
     },
     {
-      title: 'derp',
+      title: 'The birth of something desirable',
       author: 'Ashely Bate',
       label: 'New',
       genres: ['Romance'],
       sample:
-        'The memory dissolved, and his life played itself out again, perhaps a little slower than before.  The time he was five, at Cinnabar island on the black sand beaches, and a snatch of haunting song floated through the air. I know that music… Ash realized. But how? What would Lugia have been doing this far north of Shamouti? Could it be... because of me? The prophecy said I was the Chosen One...',
+        'The memory dissolved, and his life played itself out again, perhaps a little slower than before.  The time he was five, at Cinnabar island on the black sand beaches, and a snatch of haunting song floated through the air. I know that music… Ash realized. But how? What would Lugia have been doing this far north of Shamouti? Could it be... because of me?',
     },
     {
-      title: 'derp',
+      title: 'Consequences',
       author: 'Kirk Hancock',
       // label: 'Forgotten',
       // label: 'Author continues',
@@ -69,7 +69,7 @@ const Example = () => {
                 // color: 'var(--primary-color)',
               }}
             >
-              Chapter 1
+              {data[0].title}
             </h2>
 
             {/* <p
@@ -216,8 +216,8 @@ const Example = () => {
         <h2 style={{ textAlign: 'center', color: 'white', marginTop: '64px' }}>
           Chapter 2
         </h2>
-        <p style={{ textAlign: 'center', color: 'white', marginTop: '64px' }}>
-          Choose a fork below to continue the story
+        <p style={{ textAlign: 'center', color: 'white', marginTop: '24px' }}>
+          Choose a fork in the story below to continue reading
         </p>
         {/* <PageContentWrap>
           <Flex
@@ -259,6 +259,7 @@ const Example = () => {
                     // backgroundColor: '#CCDDEE',
                     backgroundColor: 'white',
                     border: '1px solid #445464',
+                    // maxHeight: '580px',
                   }}
                 >
                   {/* <Flex> */}
@@ -316,30 +317,131 @@ const Example = () => {
                       fontSize: '14px',
                       textTransform: 'uppercase',
                       letterSpacing: 1,
+                      color: '#445464',
+                      marginBottom: '16px',
+                    }}
+                  >
+                    {/* {item.label} */}
+                    Chapter 2
+                  </p>
+                  <h3
+                    style={{
+                      textAlign: 'center',
+                      marginBottom: '16px',
+                      fontSize: '28px',
+                      lineHeight: 1.4,
+                      // color: '#445464',
+                      fontWeight: 400,
+                    }}
+                  >
+                    {item.title}
+                    {/* by {item.author} */}
+                  </h3>
+                  <Flex
+                    style={{
+                      justifyContent: 'center',
                       marginBottom: '24px',
                     }}
                   >
-                    Recommended
-                  </p>
-                  <p>{item.sample}</p>
-                  <Flex style={{}}>
+                    <span
+                      style={{
+                        fontSize: '14px',
+                        textAlign: 'center',
+                      }}
+                    >
+                      By {item.author}
+                    </span>
+                    <span
+                      style={{
+                        margin: '0 8px',
+                        fontSize: '14px',
+                      }}
+                    >
+                      |
+                    </span>
+                    <span
+                      style={{
+                        fontSize: '14px',
+                        textAlign: 'center',
+                      }}
+                    >
+                      {item.label}
+                    </span>
+                  </Flex>
+                  {/* <p style={{ textAlign: 'center' }}>by {item.author}</p> */}
+                  <div style={{ flexGrow: 1 }}>
+                    <p
+                      style={
+                        {
+                          // flexGrow: 0,
+                          // display: '-webkit-box',
+                          // WebkitBoxOrient: 'vertical',
+                          // WebkitLineClamp: '6',
+                          // whiteSpace: 'pre-wrap',
+                          // margin: 0,
+                        }
+                      }
+                    >
+                      {item.sample.slice(0, 300).trim()}...
+                    </p>
+                  </div>
+                  <Flex
+                    style={{
+                      justifyContent: 'center',
+                      // justifyContent: 'space-between',
+                      alignItems: 'center',
+                      color: 'var(--primary-color)',
+                      textAlign: 'center',
+                      marginTop: '24px',
+                    }}
+                  >
                     {/* <Image
                       src="/bold.png"
                       width={220}
                       height={38}
                       style={{ marginBottom: '24px' }}
                     /> */}
-                    <p
+                    {/* <p
                       style={{
                         fontSize: '18px',
-                        fontWeight: 700,
+                        // fontWeight: 700,
                         lineHeight: '16px',
-                        marginBottom: '32px',
+                        // marginBottom: '32px',
+                        marginTop: 24,
                       }}
                     >
-                      By Timothy Bate
-                    </p>
+                      By {item.author}
+                    </p> */}
+                    <span
+                      style={{
+                        padding: '12px 16px',
+                        border: '2px solid #445464',
+                        textTransform: 'uppercase',
+                        fontWeight: 500,
+                        fontSize: '16px',
+                        color: '#445464',
+                        lineHeight: '16px',
+                        // letterSpacing: '1px',
+                        // textDecoration: 'underline',
+                      }}
+                    >
+                      Keep reading
+                    </span>
+                    {/* <Flex
+                      style={{
+                        alignItems: 'flex-end',
+                        flexDirection: 'column',
+                      }}
+                    >
+                      <p style={{ margin: 0, fontSize: '14px' }}>
+                        {item.label}
+                      </p>
+                      <p style={{ margin: 0, fontSize: '14px' }}>
+                        By {item.author}
+                      </p>
+                    </Flex> */}
                   </Flex>
+
                   {/* <StoryOptionLineOut /> */}
                 </Flex>
               );
