@@ -1,5 +1,7 @@
 :root {
-  --max-content-width: 900px;
+  --max-content-width-small: 760px;
+  --max-content-width: 960px;
+  --max-content-width-large: 1400px;
 
   --padding-0: 8px;
   --padding-1: 16px;

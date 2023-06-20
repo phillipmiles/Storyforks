@@ -12,12 +12,15 @@ import {
   Book,
   BookmarkEmpty,
   BrightStar,
+  Check,
+  CheckCircle,
   EditPencil,
   Facebook,
   Filter,
   Heart,
   MoreHoriz,
   NavArrowRight,
+  OpenBook,
   Star,
   Suggestion,
   Twitter,
@@ -27,6 +30,7 @@ import GenericButton from '@/components/generic/Button';
 import HeroBackground from '@/components/HeroBackground';
 import Image from 'next/image';
 import ButtonText from '@/components/generic/ButtonText';
+import ForkList from '@/components/ForkList';
 
 const Example = () => {
   const data = [
@@ -34,6 +38,7 @@ const Example = () => {
       title: 'A Hill To Die On',
       author: 'Katie Wood',
       label: 'Recommended',
+      chapter: 'Chapter 2',
       genres: ['Drama', 'Horror'],
       sample:
         'Eight, playing in the copse of trees at the end of the road that led to the sea. It was all one big argument with Gary, more than playing... but, as this memory played out like the others, there was a glimpse of something in the trees. Barely a flash, but the memory stopped. And Ash marvelled. This was not what he had expected to find in his childhood.',
@@ -42,6 +47,7 @@ const Example = () => {
       title: 'The birth of something desirable',
       author: 'Ashely Bate',
       label: 'New',
+      chapter: 'Chapter 2',
       genres: ['Romance'],
       sample:
         'The memory dissolved, and his life played itself out again, perhaps a little slower than before.  The time he was five, at Cinnabar island on the black sand beaches, and a snatch of haunting song floated through the air. I know that music… Ash realized. But how? What would Lugia have been doing this far north of Shamouti? Could it be... because of me?',
@@ -53,6 +59,7 @@ const Example = () => {
       // label: 'Author continues',
       // label: 'Initial author continued',
       label: 'Long',
+      chapter: 'Chapter 2',
       genres: ['Unknown'],
       sample:
         "Only reviewing this long forgotten past now did Ash truly realize that he had felt things differently. Other people, he knew, would feel the heat running under the Fire Pokémon's fur. But few would feel the surging, volcanic power in Arcanine's body just from being near – faintly, but still somehow there to be felt.",
@@ -62,7 +69,13 @@ const Example = () => {
   return (
     <Page style={{ backgroundColor: 'white' }}>
       <PageContentWrap>
-        <div style={{ backgroundColor: 'white', padding: '96px' }}>
+        <div
+          style={{
+            backgroundColor: 'white',
+            padding: '128px',
+            paddingBottom: '0px',
+          }}
+        >
           <div
             style={{
               marginTop: '48px',
@@ -74,7 +87,7 @@ const Example = () => {
             <p
               style={{
                 textAlign: 'center',
-                fontSize: '16px',
+                // fontSize: '16px',
                 textTransform: 'uppercase',
                 letterSpacing: 1,
                 color: '#445464',
@@ -103,28 +116,28 @@ const Example = () => {
             >
               <span
                 style={{
-                  fontSize: '16px',
+                  // fontSize: '16px',
                   textAlign: 'center',
                 }}
               >
                 By {data[0].author}
               </span>
-              <span
+              {/* <span
                 style={{
                   margin: '0 8px',
-                  fontSize: '16px',
+                  // fontSize: '16px',
                 }}
               >
                 |
               </span>
               <span
                 style={{
-                  fontSize: '16px',
+                  // fontSize: '16px',
                   textAlign: 'center',
                 }}
               >
                 {data[0].label}
-              </span>
+              </span> */}
             </Flex>
 
             {/* <p
@@ -142,7 +155,7 @@ const Example = () => {
                     <span style={{ margin: '0 8px' }}>fork 1</span>
                   </p> */}
           </div>
-          <div
+          {/* <div
             style={{
               // backgroundColor: 'var(--background-light-color)',
               // borderTop: '1px solid var(--primary-light-color)',
@@ -161,7 +174,7 @@ const Example = () => {
               and increasingly close runner up in five other regional
               tournaments – was... confused.
             </p>
-          </div>
+          </div> */}
           <p>
             Ash Ketchum – trainer of Pallet Town, winner of the Orange League
             and increasingly close runner up in five other regional tournaments
@@ -275,7 +288,7 @@ const Example = () => {
           <Flex
             style={{
               justifyContent: 'center',
-              marginBottom: '64px',
+              // marginBottom: '64px',
               marginTop: '96px',
             }}
           >
@@ -284,23 +297,30 @@ const Example = () => {
                 justifyContent: 'space-between',
               }}
             >
-              <Flex style={{ marginRight: '48px' }}>
+              <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
                 {/* <Suggestion style={{ marginRight: '8px' }} /> */}
                 <Star style={{ marginRight: '8px' }} />
                 Recommend
               </Flex>
               <Flex
                 style={{
-                  marginRight: '48px',
+                  marginRight: '24px',
+                  marginLeft: '24px',
                 }}
               >
                 <BookmarkEmpty style={{ marginRight: '8px' }} />
                 Bookmark
               </Flex>
-              <Flex style={{}}>
-                <EditPencil style={{ marginRight: '8px' }} />
-                Fork story
+              <Flex
+                style={{
+                  marginRight: '24px',
+                  marginLeft: '24px',
+                }}
+              >
+                <CheckCircle style={{ marginRight: '8px' }} />
+                Mark as read
               </Flex>
+
               {/* <Flex style={{ marginRight: '48px' }}>
                 <MoreHoriz style={{ marginRight: '8px' }} />
                 More
@@ -314,6 +334,64 @@ const Example = () => {
             {/* <p>Suggest this chapter as an end of the story</p>
           <p>Mark chapter as mature</p> */}
           </Flex>
+          <Flex
+            style={{
+              flexDirection: 'column',
+              alignItems: 'center',
+              marginTop: '64px',
+              // marginBottom: '64px',
+            }}
+          >
+            <Flex
+              style={{
+                maxWidth: '400px',
+                width: '100%',
+                justifyContent: 'center',
+                // color: '#445464',
+                backgroundColor: '#445464',
+                color: 'white',
+                border: '2px solid #445464',
+                textAlign: 'center',
+                // padding: '16px 24px',
+                padding: '8px 16px',
+                marginLeft: '48px',
+                marginRight: '48px',
+                // marginTop: '64px',
+                // marginBottom: '64px',
+                // marginTop: '16px',
+              }}
+            >
+              <EditPencil style={{ marginRight: '8px' }} />
+              Write the next chapter
+            </Flex>
+            <Flex
+              style={{
+                maxWidth: '400px',
+                width: '100%',
+                justifyContent: 'center',
+                color: '#445464',
+                border: '2px solid #445464',
+                textAlign: 'center',
+                // padding: '16px 24px',
+                padding: '8px 16px',
+                marginLeft: '48px',
+                marginRight: '48px',
+                // marginTop: '64px',
+                marginTop: '16px',
+                // marginBottom: '64px',
+              }}
+            >
+              <OpenBook style={{ marginRight: '8px' }} />
+              Keep reading
+            </Flex>
+            <div
+              style={{
+                width: '2px',
+                backgroundColor: '#445464',
+                height: '160px',
+              }}
+            />
+          </Flex>
         </div>
       </PageContentWrap>
       <div
@@ -326,9 +404,42 @@ const Example = () => {
         <h2 style={{ textAlign: 'center', color: 'white', marginTop: '96px' }}>
           Chapter 2
         </h2>
-        <p style={{ textAlign: 'center', color: 'white', marginTop: '24px' }}>
-          Choose a fork in the story below to continue reading.
-        </p>
+
+        <Flex
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: '24px',
+            flexDirection: 'column',
+            marginBottom: '64px',
+          }}
+        >
+          <p style={{ textAlign: 'center', color: 'white', marginTop: '24px' }}>
+            Choose a fork in the story below to continue reading.
+          </p>
+
+          {/* <Flex
+            style={{
+              justifyContent: 'center',
+              color: 'white',
+              border: '2px solid white',
+              textAlign: 'center',
+              // padding: '16px 24px',
+              padding: '8px 16px',
+              marginLeft: '48px',
+              marginRight: '48px',
+              marginBottom: '64px',
+              marginTop: '24px',
+            }}
+          >
+            <EditPencil style={{ marginRight: '8px' }} />
+            Write the next chapter
+          </Flex> */}
+        </Flex>
+        {/* <p style={{ color: 'white', textAlign: 'center' }}>Or</p> */}
+        {/* <p style={{ textAlign: 'center', color: 'white', marginTop: '24px' }}>
+          Or choose a fork in the story below to continue reading.
+        </p> */}
         {/* <PageContentWrap>
           <Flex
             style={{
@@ -346,7 +457,9 @@ const Example = () => {
         <Flex
           style={{
             justifyContent: 'center',
-            padding: '48px',
+            paddingLeft: '48px',
+            paddingRight: '48px',
+            marginBottom: '64px',
           }}
         >
           {data &&
@@ -525,11 +638,11 @@ const Example = () => {
                     </p> */}
                     <span
                       style={{
-                        padding: '12px 16px',
+                        padding: '14px 16px',
                         border: '2px solid #445464',
-                        textTransform: 'uppercase',
-                        fontWeight: 500,
-                        fontSize: '16px',
+                        // textTransform: 'uppercase',
+                        // fontWeight: 500,
+                        // fontSize: '16px',
                         color: '#445464',
                         lineHeight: '16px',
                         width: '100%',
@@ -560,24 +673,9 @@ const Example = () => {
             })}
         </Flex>
         <PageContentWrap>
-          <p style={{ color: 'white', textAlign: 'center' }}>Or</p>
-          <Flex
+          {/* <Flex
             style={{
-              color: 'white',
-              border: '2px solid white',
-              textAlign: 'center',
-              padding: '8px 16px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              marginBottom: '96px',
-            }}
-          >
-            <EditPencil style={{ marginRight: '8px' }} />
-            Write your own chapter
-          </Flex>
-          <Flex
-            style={{
-              // paddingTop: '64px',
+              paddingTop: '64px',
               justifyContent: 'center',
               color: 'white',
             }}
@@ -593,38 +691,11 @@ const Example = () => {
             >
               Browse all 1274 forks
             </p>
-          </Flex>
-          <Flex
-            style={{
-              backgroundColor: 'white',
-              // marginBottom: '96px',
-              // justifyContent: 'space-between',
-              alignItems: 'center',
-              padding: '4px 8px',
-              // marginBottom: '8px',
-              border: '1px solid #445464',
-            }}
-          >
-            <div style={{ flexGrow: 1 }}>A Hill To Die On</div>
-            <div>By Ashely Bate</div>
-            <div>Chapter 2</div>
-            <div>Recommended</div>
-          </Flex>
-          <Flex
-            style={{
-              backgroundColor: 'white',
-              marginBottom: '96px',
-              border: '1px solid #445464',
-              // justifyContent: 'space-between',
-              padding: '4px 8px',
-              alignItems: 'center',
-            }}
-          >
-            <div style={{ flexGrow: 1 }}>The birth of something desirable</div>
-            <div>By Kirk Hancock</div>
-            <div>Chapter 2</div>
-            <div>New</div>
-          </Flex>
+          </Flex> */}
+          <ForkList
+            forks={[...data, ...data, ...data, ...data, ...data, ...data]}
+            style={{ marginTop: '64PX', marginBottom: '96px' }}
+          />
         </PageContentWrap>
       </div>
     </Page>

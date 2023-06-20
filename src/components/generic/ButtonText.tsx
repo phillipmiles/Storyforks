@@ -9,10 +9,10 @@ const ButtonText = ({ href, children, ...props }: Props): JSX.Element => {
     <Link href={href} passHref {...props}>
       <span
         style={{
-          color: 'primary',
+          color: 'var(--primary-color)',
           borderBottomWidth: 1,
           borderBottomStyle: 'solid',
-          borderBottomColor: 'primary',
+          borderBottomColor: 'var(--primary-color)',
           textDecoration: 'none',
         }}
       >

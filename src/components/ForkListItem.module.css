@@ -1,0 +1,32 @@
+.container {
+  cursor: pointer;
+
+  position: relative;
+  z-index: 1;
+}
+
+.container:hover {
+  z-index: 2;
+}
+.container:before {
+  content: '';
+  background-color: white;
+  position: absolute;
+  transition: margin 150ms, transform 150ms;
+  /* margin-left: 0px;
+  margin-right: 0px; */
+  border: 1px solid #445464;
+  /* z-index: 0; */
+  transform: scale(1);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.container:hover:before {
+  transform: scaleX(1.03);
+  transition: margin 50ms, transform 50ms;
+  /* margin-left: -16px;
+  margin-right: -16px; */
+}
