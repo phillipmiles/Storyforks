@@ -80,7 +80,6 @@ const ContentSlider = ({
     };
 
     if (!isAnimating && previousIndex !== currentIndex) {
-      console.log('lets go');
       clearTimeout(animationEndTimeout.current);
       setTransitionToIndex(currentIndex);
       setIsAnimating(true);

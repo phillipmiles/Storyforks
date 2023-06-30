@@ -40,7 +40,11 @@ const Example = () => {
     {
       title: 'A Hill To Die On',
       author: 'Katie Wood',
-      label: 'Recommended',
+      // label: 'Recommended', // Ones that have many recommendations relative to aggregete stories average.
+      // label: 'New', // Ones that are recent and don't have many recommendation
+      // label: 'Undiscovered',  // Ones that don't have many views or recommendation. Time is irrelavent - essentially the default status
+      // label: 'Feedback' // For ones with poor view to recommendation ratio
+      label: 'Feedback',
       chapter: 'Chapter 2',
       genres: ['Drama', 'Horror'],
       sample:
@@ -291,209 +295,184 @@ const Example = () => {
               Chapter Actions
             </p>
           </Flex> */}
-
-          <Flex
+          <div
             style={{
-              justifyContent: 'center',
-              // marginBottom: '64px',
+              // border: '2px solid var(--background-color-dark)',
               marginTop: '96px',
             }}
           >
             <Flex
               style={{
-                justifyContent: 'space-between',
+                justifyContent: 'center',
+                // marginBottom: '64px',
               }}
             >
-              <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
-                {/* <Suggestion style={{ marginRight: '8px' }} /> */}
-                <Star style={{ marginRight: '8px' }} />
-                Recommend
-              </Flex>
               <Flex
                 style={{
-                  marginRight: '24px',
-                  marginLeft: '24px',
+                  justifyContent: 'space-between',
                 }}
               >
-                <BookmarkEmpty style={{ marginRight: '8px' }} />
-                Bookmark
-              </Flex>
-              <Flex
-                style={{
-                  marginRight: '24px',
-                  marginLeft: '24px',
-                }}
-              >
-                <CheckCircle style={{ marginRight: '8px' }} />
-                Mark as read
-              </Flex>
+                <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
+                  {/* <Suggestion style={{ marginRight: '8px' }} /> */}
+                  <Star style={{ marginRight: '8px' }} />
+                  Recommend
+                </Flex>
+                <Flex
+                  style={{
+                    marginRight: '24px',
+                    marginLeft: '24px',
+                  }}
+                >
+                  <BookmarkEmpty style={{ marginRight: '8px' }} />
+                  Bookmark
+                </Flex>
+                <Flex
+                  style={{
+                    marginRight: '24px',
+                    marginLeft: '24px',
+                  }}
+                >
+                  <CheckCircle style={{ marginRight: '8px' }} />
+                  Mark as read
+                </Flex>
 
-              {/* <Flex style={{ marginRight: '48px' }}>
+                {/* <Flex style={{ marginRight: '48px' }}>
                 <MoreHoriz style={{ marginRight: '8px' }} />
                 More
               </Flex> */}
-            </Flex>
-            {/* <Flex>
+              </Flex>
+              {/* <Flex>
               <Twitter />
               <Facebook style={{ marginLeft: '8px' }} />
               <ArrowEmailForward style={{ marginLeft: '8px' }} />
             </Flex> */}
-            {/* <p>Suggest this chapter as an end of the story</p>
+              {/* <p>Suggest this chapter as an end of the story</p>
           <p>Mark chapter as mature</p> */}
-          </Flex>
-          <Flex
-            style={{
-              flexDirection: 'column',
-              alignItems: 'center',
-              marginTop: '64px',
-              // marginBottom: '64px',
-            }}
-          >
-            <Flex
-              style={{
-                maxWidth: '400px',
-                width: '100%',
-                justifyContent: 'center',
-                // color: '#445464',
-                backgroundColor: 'var(--background-color-dark)',
-                color: 'white',
-                border: '2px solid var(--background-color-dark)',
-                textAlign: 'center',
-                // padding: '16px 24px',
-                padding: '8px 16px',
-                marginLeft: '48px',
-                marginRight: '48px',
-                // marginTop: '64px',
-                // marginBottom: '64px',
-                // marginTop: '16px',
-              }}
-            >
-              <EditPencil style={{ marginRight: '8px' }} />
-              Write the next chapter
             </Flex>
             <Flex
               style={{
-                maxWidth: '400px',
-                width: '100%',
-                justifyContent: 'center',
-                color: '#445464',
-                border: '2px solid var(--background-color-dark)',
-                textAlign: 'center',
-                // padding: '16px 24px',
-                padding: '8px 16px',
-                marginLeft: '48px',
-                marginRight: '48px',
-                // marginTop: '64px',
-                marginTop: '16px',
+                // flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: '48px',
                 // marginBottom: '64px',
               }}
             >
-              <OpenBook style={{ marginRight: '8px' }} />
-              Keep reading
-            </Flex>
-            <div
+              <Flex
+                style={{
+                  // maxWidth: '400px',
+                  width: '100%',
+                  justifyContent: 'center',
+                  // color: '#445464',
+                  backgroundColor: 'var(--background-color-dark)',
+                  color: 'white',
+                  border: '2px solid var(--background-color-dark)',
+                  textAlign: 'center',
+                  // padding: '16px 24px',
+                  padding: '8px 16px',
+                  // marginLeft: '48px',
+                  marginRight: '24px',
+                  // marginTop: '64px',
+                  // marginBottom: '64px',
+                  // marginTop: '16px',
+                }}
+              >
+                <EditPencil style={{ marginRight: '8px' }} />
+                Write the next chapter
+              </Flex>
+              <Flex
+                style={{
+                  maxWidth: '400px',
+                  width: '100%',
+                  justifyContent: 'center',
+                  color: 'var(--background-color-dark)',
+                  border: '2px solid var(--background-color-dark)',
+                  textAlign: 'center',
+                  // padding: '16px 24px',
+                  padding: '8px 16px',
+                  marginLeft: '24px',
+                  // marginRight: '48px',
+                  // marginTop: '64px',
+                  // marginTop: '16px',
+                  // marginBottom: '64px',
+                }}
+              >
+                <OpenBook style={{ marginRight: '8px' }} />
+                Read the next chapter
+              </Flex>
+              {/* <div
               style={{
                 width: '2px',
                 backgroundColor: 'var(--background-color-dark)',
                 height: '160px',
               }}
-            />
+            /> */}
+            </Flex>
+          </div>
+          <Flex
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: '16px',
+              flexDirection: 'column',
+              marginBottom: '48px',
+              marginTop: '64px',
+              // borderTop: '2px solid var(--background-color-dark)',
+            }}
+          >
+            <p
+              style={{
+                textAlign: 'center',
+                margin: 0,
+              }}
+            >
+              Choose a fork in the story below to continue reading.
+            </p>
           </Flex>
         </div>
       </PageContentWrap>
-      <div
+      {/* <h2 style={{ textAlign: 'center', marginTop: '108px', fontSize: '36px' }}>
+        Chapter 2
+      </h2> */}
+
+      <Flex
         style={{
-          background: 'var(--background-color-dark)',
-          // borderTop: '2px solid #748494',
-          // paddingTop: '92px',
+          justifyContent: 'center',
+          // flexDirection: 'column',
+          marginBottom: '64px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          // maxWidth: '800px',
+          // border: '2px solid var(--background-color-dark)',
         }}
       >
-        <h2 style={{ textAlign: 'center', color: 'white', marginTop: '96px' }}>
-          Chapter 2
-        </h2>
-
-        <Flex
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: '16px',
-            flexDirection: 'column',
-            marginBottom: '64px',
-          }}
-        >
-          <p style={{ textAlign: 'center', color: 'white', marginTop: '24px' }}>
-            Choose a fork in the story below to continue reading.
-          </p>
-
-          {/* <Flex
-            style={{
-              justifyContent: 'center',
-              color: 'white',
-              border: '2px solid white',
-              textAlign: 'center',
-              // padding: '16px 24px',
-              padding: '8px 16px',
-              marginLeft: '48px',
-              marginRight: '48px',
-              marginBottom: '64px',
-              marginTop: '24px',
-            }}
-          >
-            <EditPencil style={{ marginRight: '8px' }} />
-            Write the next chapter
-          </Flex> */}
-        </Flex>
-        {/* <p style={{ color: 'white', textAlign: 'center' }}>Or</p> */}
-        {/* <p style={{ textAlign: 'center', color: 'white', marginTop: '24px' }}>
-          Or choose a fork in the story below to continue reading.
-        </p> */}
-        {/* <PageContentWrap>
-          <Flex
-            style={{
-              color: 'white',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBottom: '48px',
-            }}
-          >
-            <h3 style={{ fontSize: '24px' }}>Forks</h3>
-            <div>Filters</div>
-          </Flex>
-        </PageContentWrap> */}
-
-        <Flex
-          style={{
-            justifyContent: 'center',
-            paddingLeft: '48px',
-            paddingRight: '48px',
-            marginBottom: '64px',
-          }}
-        >
-          {data &&
-            data.map((item, index) => {
-              let curveDirection = 'both';
-              if (index == 0) curveDirection = 'right';
-              else if (index == 2) curveDirection = 'left';
-              return (
-                <Flex
-                  key={index}
-                  style={{
-                    width: '100%',
-                    // margin: '4px',
-                    flexDirection: 'column',
-                    // alignItems: 'center',
-                    padding: '48px',
-                    flexBasis: 1,
-                    flexShrink: 0,
-                    flexGrow: 1,
-                    // backgroundColor: '#CCDDEE',
-                    backgroundColor: 'white',
-                    border: '1px solid var(--background-color-dark)',
-                    // maxHeight: '580px',
-                  }}
-                >
-                  {/* <Flex> */}
-                  {/* <p
+        {data &&
+          data.map((item, index) => {
+            let curveDirection = 'both';
+            if (index == 0) curveDirection = 'right';
+            else if (index == 2) curveDirection = 'left';
+            return (
+              <Flex
+                key={index}
+                style={{
+                  width: '100%',
+                  // margin: '4px',
+                  flexDirection: 'column',
+                  // alignItems: 'center',
+                  padding: '48px 48px',
+                  flexBasis: 1,
+                  flexShrink: 0,
+                  flexGrow: 1,
+                  marginBottom: '24px',
+                  // backgroundColor: '#CCDDEE',
+                  backgroundColor: 'white',
+                  borderTop: '2px solid var(--background-color-dark)',
+                  borderBottom: '2px solid var(--background-color-dark)',
+                  borderRight: '2px solid var(--background-color-dark)',
+                  // maxHeight: '580px',
+                }}
+              >
+                {/* <Flex> */}
+                {/* <p
                     style={{
                       fontSize: '24px',
                       fontWeight: 700,
@@ -505,7 +484,7 @@ const Example = () => {
                     By
                   </p> */}
 
-                  {/* <p
+                {/* <p
                     style={{
                       fontSize: '16px',
                       // fontWeight: 700,
@@ -519,7 +498,7 @@ const Example = () => {
                     Recommended
                   </p> */}
 
-                  {/* <p
+                {/* <p
                     style={{
                       fontSize: '32px',
                       fontWeight: 700,
@@ -529,8 +508,8 @@ const Example = () => {
                   >
                     Timothy Bate
                   </p> */}
-                  {/* </Flex> */}
-                  {/* <h3
+                {/* </Flex> */}
+                {/* <h3
                     style={{
                       fontSize: '24px',
                       fontWeight: 700,
@@ -541,98 +520,98 @@ const Example = () => {
                   >
                     Chapter 2
                   </h3> */}
-                  <p
+                <p
+                  style={{
+                    textAlign: 'center',
+                    fontSize: '14px',
+                    textTransform: 'uppercase',
+                    letterSpacing: 1,
+                    color: 'var(--background-color-dark)',
+                    marginBottom: '16px',
+                  }}
+                >
+                  {/* {item.label} */}
+                  Chapter 2
+                </p>
+                <h3
+                  style={{
+                    textAlign: 'center',
+                    marginBottom: '16px',
+                    fontSize: '30px',
+                    lineHeight: 1.4,
+                    // color: '#445464',
+                    fontWeight: 400,
+                  }}
+                >
+                  {item.title}
+                  {/* by {item.author} */}
+                </h3>
+                <Flex
+                  style={{
+                    justifyContent: 'center',
+                    marginBottom: '24px',
+                    color: 'var(--background-color-dark)',
+                  }}
+                >
+                  <span
                     style={{
-                      textAlign: 'center',
                       fontSize: '14px',
-                      textTransform: 'uppercase',
-                      letterSpacing: 1,
-                      color: 'var(--background-color-dark)',
-                      marginBottom: '16px',
-                    }}
-                  >
-                    {/* {item.label} */}
-                    Chapter 2
-                  </p>
-                  <h3
-                    style={{
                       textAlign: 'center',
-                      marginBottom: '16px',
-                      fontSize: '30px',
-                      lineHeight: 1.4,
-                      // color: '#445464',
-                      fontWeight: 400,
                     }}
                   >
-                    {item.title}
-                    {/* by {item.author} */}
-                  </h3>
-                  <Flex
+                    By {item.author}
+                  </span>
+                  <span
                     style={{
-                      justifyContent: 'center',
-                      marginBottom: '24px',
-                      color: 'var(--background-color-dark)',
+                      margin: '0 8px',
+                      fontSize: '14px',
                     }}
                   >
-                    <span
-                      style={{
-                        fontSize: '14px',
-                        textAlign: 'center',
-                      }}
-                    >
-                      By {item.author}
-                    </span>
-                    <span
-                      style={{
-                        margin: '0 8px',
-                        fontSize: '14px',
-                      }}
-                    >
-                      |
-                    </span>
-                    <span
-                      style={{
-                        fontSize: '14px',
-                        textAlign: 'center',
-                      }}
-                    >
-                      {item.label}
-                    </span>
-                  </Flex>
-                  {/* <p style={{ textAlign: 'center' }}>by {item.author}</p> */}
-                  <div style={{ flexGrow: 1 }}>
-                    <p
-                      style={
-                        {
-                          // flexGrow: 0,
-                          // display: '-webkit-box',
-                          // WebkitBoxOrient: 'vertical',
-                          // WebkitLineClamp: '6',
-                          // whiteSpace: 'pre-wrap',
-                          // margin: 0,
-                        }
+                    |
+                  </span>
+                  <span
+                    style={{
+                      fontSize: '14px',
+                      textAlign: 'center',
+                    }}
+                  >
+                    {item.label}
+                  </span>
+                </Flex>
+                {/* <p style={{ textAlign: 'center' }}>by {item.author}</p> */}
+                <div style={{ flexGrow: 1 }}>
+                  <p
+                    style={
+                      {
+                        // flexGrow: 0,
+                        // display: '-webkit-box',
+                        // WebkitBoxOrient: 'vertical',
+                        // WebkitLineClamp: '6',
+                        // whiteSpace: 'pre-wrap',
+                        // margin: 0,
                       }
-                    >
-                      {item.sample.slice(0, 300).trim()}...
-                    </p>
-                  </div>
-                  <Flex
-                    style={{
-                      justifyContent: 'center',
-                      // justifyContent: 'space-between',
-                      alignItems: 'center',
-                      color: 'var(--primary-color)',
-                      textAlign: 'center',
-                      marginTop: '24px',
-                    }}
+                    }
                   >
-                    {/* <Image
+                    {item.sample.slice(0, 300).trim()}...
+                  </p>
+                </div>
+                <Flex
+                  style={{
+                    justifyContent: 'center',
+                    // justifyContent: 'space-between',
+                    alignItems: 'center',
+                    color: 'var(--primary-color)',
+                    textAlign: 'center',
+                    marginTop: '24px',
+                  }}
+                >
+                  {/* <Image
                       src="/bold.png"
                       width={220}
                       height={38}
                       style={{ marginBottom: '24px' }}
                     /> */}
-                    {/* <p
+                  {/* <p
                       style={{
                         fontSize: '18px',
                         // fontWeight: 700,
@@ -643,23 +622,23 @@ const Example = () => {
                     >
                       By {item.author}
                     </p> */}
-                    <span
-                      style={{
-                        padding: '14px 16px',
-                        border: '2px solid var(--background-color-dark)',
-                        // textTransform: 'uppercase',
-                        // fontWeight: 500,
-                        // fontSize: '16px',
-                        color: '#445464',
-                        lineHeight: '16px',
-                        width: '100%',
-                        // letterSpacing: '1px',
-                        // textDecoration: 'underline',
-                      }}
-                    >
-                      Keep reading
-                    </span>
-                    {/* <Flex
+                  <span
+                    style={{
+                      padding: '14px 16px',
+                      border: '2px solid var(--background-color-dark)',
+                      // textTransform: 'uppercase',
+                      // fontWeight: 500,
+                      // fontSize: '16px',
+                      color: '#445464',
+                      lineHeight: '16px',
+                      width: '100%',
+                      // letterSpacing: '1px',
+                      // textDecoration: 'underline',
+                    }}
+                  >
+                    Keep reading
+                  </span>
+                  {/* <Flex
                       style={{
                         alignItems: 'flex-end',
                         flexDirection: 'column',
@@ -672,13 +651,20 @@ const Example = () => {
                         By {item.author}
                       </p>
                     </Flex> */}
-                  </Flex>
-
-                  {/* <StoryOptionLineOut /> */}
                 </Flex>
-              );
-            })}
-        </Flex>
+
+                {/* <StoryOptionLineOut /> */}
+              </Flex>
+            );
+          })}
+      </Flex>
+      <div
+        style={{
+          background: 'var(--background-color-dark)',
+          // borderTop: '2px solid #748494',
+          // paddingTop: '92px',
+        }}
+      >
         <PageContentWrap>
           {/* <Flex
             style={{

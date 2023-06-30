@@ -3,5 +3,8 @@
   --primary-light-color: #c4d7e6;
   --background-color: #ecf4fa;
   --background-light-color: #f4f9fc;
-  --black-color: #334466;
+  --background-color-dark: #262c35;
+  /* --background-color-dark: #445464; */
+  --black-color: #262c35;
+  /* --black-color: #334466; */
 }

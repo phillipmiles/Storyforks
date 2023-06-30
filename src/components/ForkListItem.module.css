@@ -12,10 +12,14 @@
   content: '';
   background-color: white;
   position: absolute;
-  transition: margin 150ms, transform 150ms;
+  transition: margin 150ms, transform 150ms, border-width 150ms;
   /* margin-left: 0px;
   margin-right: 0px; */
-  border: 1px solid #445464;
+  border-style: solid;
+  border-color: #f34e5f;
+  /* border-color: #00c2ff; */
+  border-width: 0px;
+
   /* z-index: 0; */
   transform: scale(1);
   left: 0;
@@ -25,8 +29,9 @@
 }
 
 .container:hover:before {
-  transform: scaleX(1.03);
-  transition: margin 50ms, transform 50ms;
+  transform: scaleX(1.03) scaleY(1.05);
+  border-width: 2px;
+  transition: margin 50ms, transform 50ms, border-width 50ms;
   /* margin-left: -16px;
   margin-right: -16px; */
 }

@@ -11,7 +11,7 @@ const ForkListItem = ({ style, title, chapter, author, label, ...props }) => {
           justifyContent: 'space-between',
           alignItems: 'center',
           padding: '16px 32px',
-          // marginBottom: '2px',
+          marginBottom: '2px',
           textAlign: 'center',
           fontSize: '16px',
         }}

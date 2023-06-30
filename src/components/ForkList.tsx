@@ -10,14 +10,9 @@ const ForkList = ({ style, forks, children, ...props }) => {
     <div style={style}>
       <Flex
         style={{
-          // backgroundColor: 'white',
           color: 'white',
-          // marginBottom: '96px',
           justifyContent: 'space-between',
           alignItems: 'center',
-          // padding: '8px 16px',
-          // marginBottom: '8px',
-          border: '1px solid #445464',
           textAlign: 'center',
           fontSize: '16px',
           marginBottom: '48px',
@@ -26,7 +21,6 @@ const ForkList = ({ style, forks, children, ...props }) => {
         <div
           style={{
             flexGrow: 1,
-            // maxWidth: '40%',
             textAlign: 'left',
             fontSize: '28px',
           }}
@@ -59,7 +53,7 @@ const ForkList = ({ style, forks, children, ...props }) => {
           >
             Label
           </div>
-          <Select
+          {/* <Select
             defaultValue="New"
             onChange={() => {}}
             options={[
@@ -76,7 +70,7 @@ const ForkList = ({ style, forks, children, ...props }) => {
                 value: 'long',
               },
             ]}
-          />
+          /> */}
 
           <div
             style={{
@@ -98,7 +92,8 @@ const ForkList = ({ style, forks, children, ...props }) => {
           alignItems: 'center',
           padding: '8px 16px',
           // marginBottom: '8px',
-          border: '1px solid #445464',
+          border: '1px solid white',
+          borderBottomStyle: 'none',
           textAlign: 'center',
           fontSize: '16px',
         }}
