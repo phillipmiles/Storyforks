@@ -408,32 +408,34 @@ const Example = () => {
             /> */}
             </Flex>
           </div>
-          <Flex
-            style={{
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginTop: '16px',
-              flexDirection: 'column',
-              marginBottom: '48px',
-              marginTop: '64px',
-              // borderTop: '2px solid var(--background-color-dark)',
-            }}
-          >
-            <p
-              style={{
-                textAlign: 'center',
-                margin: 0,
-              }}
-            >
-              Choose a fork in the story below to continue reading.
-            </p>
-          </Flex>
         </div>
       </PageContentWrap>
       {/* <h2 style={{ textAlign: 'center', marginTop: '108px', fontSize: '36px' }}>
         Chapter 2
       </h2> */}
-
+      <Flex
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          // marginTop: '16px',
+          flexDirection: 'column',
+          marginBottom: '48px',
+          marginTop: '142px',
+          borderTop: '2px solid var(--background-color-dark)',
+          paddingTop: '128px',
+        }}
+      >
+        <h2 style={{ textAlign: 'center', fontSize: '40px' }}>Chapter 3</h2>
+        <p
+          style={{
+            textAlign: 'center',
+            // fontSize: '21px',
+            margin: 0,
+          }}
+        >
+          Choose a fork in the story below to continue reading.
+        </p>
+      </Flex>
       <Flex
         style={{
           justifyContent: 'center',
@@ -441,8 +443,10 @@ const Example = () => {
           marginBottom: '64px',
           marginLeft: 'auto',
           marginRight: 'auto',
-          // maxWidth: '800px',
-          // border: '2px solid var(--background-color-dark)',
+          paddingLeft: '24px',
+          paddingRight: '24px',
+          // maxWidth: '1400px',
+          // border: '1px solid var(--background-color-dark)',
         }}
       >
         {data &&
@@ -455,6 +459,7 @@ const Example = () => {
                 key={index}
                 style={{
                   width: '100%',
+                  margin: '24px',
                   // margin: '4px',
                   flexDirection: 'column',
                   // alignItems: 'center',
@@ -462,12 +467,13 @@ const Example = () => {
                   flexBasis: 1,
                   flexShrink: 0,
                   flexGrow: 1,
-                  marginBottom: '24px',
+                  // marginBottom: '24px',
                   // backgroundColor: '#CCDDEE',
                   backgroundColor: 'white',
                   borderTop: '2px solid var(--background-color-dark)',
                   borderBottom: '2px solid var(--background-color-dark)',
                   borderRight: '2px solid var(--background-color-dark)',
+                  borderLeft: '2px solid var(--background-color-dark)',
                   // maxHeight: '580px',
                 }}
               >
@@ -523,21 +529,20 @@ const Example = () => {
                 <p
                   style={{
                     textAlign: 'center',
-                    fontSize: '14px',
+                    fontSize: '16px',
                     textTransform: 'uppercase',
                     letterSpacing: 1,
                     color: 'var(--background-color-dark)',
                     marginBottom: '16px',
                   }}
                 >
-                  {/* {item.label} */}
-                  Chapter 2
+                  Chapter 3
                 </p>
                 <h3
                   style={{
                     textAlign: 'center',
                     marginBottom: '16px',
-                    fontSize: '30px',
+                    fontSize: '32px',
                     lineHeight: 1.4,
                     // color: '#445464',
                     fontWeight: 400,
@@ -555,7 +560,7 @@ const Example = () => {
                 >
                   <span
                     style={{
-                      fontSize: '14px',
+                      fontSize: '16px',
                       textAlign: 'center',
                     }}
                   >
@@ -564,14 +569,14 @@ const Example = () => {
                   <span
                     style={{
                       margin: '0 8px',
-                      fontSize: '14px',
+                      fontSize: '16px',
                     }}
                   >
                     |
                   </span>
                   <span
                     style={{
-                      fontSize: '14px',
+                      fontSize: '16px',
                       textAlign: 'center',
                     }}
                   >
@@ -581,16 +586,15 @@ const Example = () => {
                 {/* <p style={{ textAlign: 'center' }}>by {item.author}</p> */}
                 <div style={{ flexGrow: 1 }}>
                   <p
-                    style={
-                      {
-                        // flexGrow: 0,
-                        // display: '-webkit-box',
-                        // WebkitBoxOrient: 'vertical',
-                        // WebkitLineClamp: '6',
-                        // whiteSpace: 'pre-wrap',
-                        // margin: 0,
-                      }
-                    }
+                    style={{
+                      fontSize: '16px',
+                      // flexGrow: 0,
+                      // display: '-webkit-box',
+                      // WebkitBoxOrient: 'vertical',
+                      // WebkitLineClamp: '6',
+                      // whiteSpace: 'pre-wrap',
+                      // margin: 0,
+                    }}
                   >
                     {item.sample.slice(0, 300).trim()}...
                   </p>
