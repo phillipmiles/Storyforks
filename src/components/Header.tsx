@@ -5,7 +5,7 @@ import { useLayoutEffect, useRef, useState, useContext } from 'react';
 import { SidebarContext } from './Providers';
 
 const Header = () => {
-  const sideBarContext = useContext(SidebarContext);
+  const { toggleIsOpen } = useContext(SidebarContext);
 
   const prevScrollY = useRef(0);
 
@@ -37,11 +37,6 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const onChaptersClick = () => {
-    console.log('hi');
-    sideBarContext.setIsOpen((state) => !state);
-  };
-
   return (
     <header
       ref={headerRef}
@@ -61,13 +56,14 @@ const Header = () => {
           padding: '32px  24px',
         }}
       >
-        <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
-          <button onClick={onChaptersClick}>
-            {/* <Suggestion style={{ marginRight: '8px' }} /> */}
-            <Menu style={{ marginRight: '8px' }} />
-            Chapters {sideBarContext.isOpen ? 'Open' : 'Closed'}
-          </button>
-        </Flex>
+        <button
+          onClick={toggleIsOpen}
+          style={{ display: 'flex', marginRight: '24px', marginLeft: '24px' }}
+        >
+          {/* <Suggestion style={{ marginRight: '8px' }} /> */}
+          <Menu style={{ marginRight: '8px' }} />
+          Chapters
+        </button>
 
         <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
           {/* <Suggestion style={{ marginRight: '8px' }} /> */}
@@ -76,18 +72,6 @@ const Header = () => {
         </Flex>
       </Flex>
     </header>
-  );
-};
-
-const ChaptersButton = ({ onChaptersClick }) => {
-  return (
-    <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
-      <button onClick={onChaptersClick}>
-        {/* <Suggestion style={{ marginRight: '8px' }} /> */}
-        <Menu style={{ marginRight: '8px' }} />
-        Chapters
-      </button>
-    </Flex>
   );
 };
 

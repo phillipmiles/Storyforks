@@ -82,7 +82,7 @@ const Example = () => {
   return (
     <Page style={{ backgroundColor: 'white' }}>
       <Header onChaptersClick={onChaptersClick} />
-      <Sidebar />
+
       <PageContentWrap>
         <div
           style={{
