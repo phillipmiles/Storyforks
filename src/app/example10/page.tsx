@@ -1,3 +1,4 @@
+'use client';
 import Flex from '@/components/generic/Flex';
 import Page from '@/components/generic/Page';
 import PageContentWrap from '@/components/generic/PageContentWrap';
@@ -34,6 +35,7 @@ import Image from 'next/image';
 import ButtonText from '@/components/generic/ButtonText';
 import ForkList from '@/components/ForkList';
 import Header from '@/components/Header';
+import { Sidebar } from '@/components/SideBar';
 
 const Example = () => {
   const data = [
@@ -73,9 +75,14 @@ const Example = () => {
     },
   ];
 
+  const onChaptersClick = () => {
+    console.log('hi');
+  };
+
   return (
     <Page style={{ backgroundColor: 'white' }}>
-      <Header />
+      <Header onChaptersClick={onChaptersClick} />
+      <Sidebar />
       <PageContentWrap>
         <div
           style={{
@@ -297,19 +304,25 @@ const Example = () => {
           </Flex> */}
           <div
             style={{
-              // border: '2px solid var(--background-color-dark)',
+              // borderTop: '2px solid var(--background-color-dark)',
               marginTop: '96px',
+              paddingTop: '24px',
             }}
           >
             <Flex
               style={{
+                // borderBottom: '2px solid var(--background-color-dark)',
                 justifyContent: 'center',
+                paddingBottom: '24px',
                 // marginBottom: '64px',
               }}
             >
               <Flex
                 style={{
                   justifyContent: 'space-between',
+                  // opacity: 0.7,
+                  // color: 'blue',
+                  fontSize: '16px',
                 }}
               >
                 <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
@@ -353,7 +366,7 @@ const Example = () => {
               style={{
                 // flexDirection: 'column',
                 alignItems: 'center',
-                marginTop: '48px',
+                // marginTop: '48px',
                 // marginBottom: '64px',
               }}
             >
@@ -370,7 +383,7 @@ const Example = () => {
                   // padding: '16px 24px',
                   padding: '8px 16px',
                   // marginLeft: '48px',
-                  marginRight: '24px',
+                  marginRight: '16px',
                   // marginTop: '64px',
                   // marginBottom: '64px',
                   // marginTop: '16px',
@@ -386,10 +399,12 @@ const Example = () => {
                   justifyContent: 'center',
                   color: 'var(--background-color-dark)',
                   border: '2px solid var(--background-color-dark)',
+                  backgroundColor: 'var(--background-color-dark)',
+                  color: 'white',
                   textAlign: 'center',
                   // padding: '16px 24px',
                   padding: '8px 16px',
-                  marginLeft: '24px',
+                  marginLeft: '16px',
                   // marginRight: '48px',
                   // marginTop: '64px',
                   // marginTop: '16px',

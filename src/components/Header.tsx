@@ -1,9 +1,12 @@
 'use client';
 import { Menu, User } from 'iconoir-react';
 import Flex from './generic/Flex';
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState, useContext } from 'react';
+import { SidebarContext } from './Providers';
 
 const Header = () => {
+  const sideBarContext = useContext(SidebarContext);
+
   const prevScrollY = useRef(0);
 
   const headerRef = useRef(null);
@@ -34,6 +37,11 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const onChaptersClick = () => {
+    console.log('hi');
+    sideBarContext.setIsOpen((state) => !state);
+  };
+
   return (
     <header
       ref={headerRef}
@@ -54,9 +62,11 @@ const Header = () => {
         }}
       >
         <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
-          {/* <Suggestion style={{ marginRight: '8px' }} /> */}
-          <Menu style={{ marginRight: '8px' }} />
-          Chapters
+          <button onClick={onChaptersClick}>
+            {/* <Suggestion style={{ marginRight: '8px' }} /> */}
+            <Menu style={{ marginRight: '8px' }} />
+            Chapters {sideBarContext.isOpen ? 'Open' : 'Closed'}
+          </button>
         </Flex>
 
         <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
@@ -66,6 +76,18 @@ const Header = () => {
         </Flex>
       </Flex>
     </header>
+  );
+};
+
+const ChaptersButton = ({ onChaptersClick }) => {
+  return (
+    <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
+      <button onClick={onChaptersClick}>
+        {/* <Suggestion style={{ marginRight: '8px' }} /> */}
+        <Menu style={{ marginRight: '8px' }} />
+        Chapters
+      </button>
+    </Flex>
   );
 };
 
