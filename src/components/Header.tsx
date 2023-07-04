@@ -69,7 +69,7 @@ const Header = () => {
           width: '100%',
           height: '100px',
           // background: 'white',
-          zIndex: 300,
+          zIndex: 350,
           // zIndex: 'auto',
           transform: `translateY(${headerTranslate}px)`,
           // borderBottom: '2px solid black',
@@ -115,15 +115,13 @@ const Header = () => {
         // className={s.backgroundDiv}
         style={{
           backgroundColor: 'white',
-          position: 'sticky',
+          position: 'fixed',
           borderBottom: '2px solid black',
-
+          zIndex: 200,
           width: '100%',
           top: 0,
           transform: `translateY(${headerTranslate}px)`,
           height: '100px',
-          zIndex: 100,
-          marginTop: '-102px',
         }}
       />
     </>
