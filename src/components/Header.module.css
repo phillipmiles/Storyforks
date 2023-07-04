@@ -1,0 +1,9 @@
+.backgroundDiv:before {
+  content: '';
+  background-color: black;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  bottom: 0px;
+}

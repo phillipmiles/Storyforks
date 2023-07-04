@@ -6,6 +6,7 @@ import '../styles/globals.css';
 import Providers from '@/components/Providers';
 import Sidebar from '@/components/SideBar';
 import PageContent from '@/components/PageContent';
+import Header from '@/components/Header';
 export const metadata = {
   title: 'Storyforks',
   description: 'Collaborative storytelling community website',
@@ -20,8 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
+          <Header />
           <Sidebar />
-          <PageContent>{children}</PageContent>
+          {children}
         </Providers>
       </body>
     </html>

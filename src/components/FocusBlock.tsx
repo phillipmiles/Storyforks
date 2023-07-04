@@ -3,19 +3,22 @@
 import { useContext } from 'react';
 import { SidebarContext } from './Providers';
 
-const PageContent = ({ children }) => {
+const FocusBlock = ({ children }) => {
   let { isOpen } = useContext(SidebarContext);
 
   return (
-    <main
+    <div
       style={{
+        position: 'relative',
+        zIndex: 200,
+        backgroundColor: 'white',
         paddingLeft: isOpen ? '300px' : '0px',
         transition: 'padding 300ms',
       }}
     >
       {children}
-    </main>
+    </div>
   );
 };
 
-export default PageContent;
+export default FocusBlock;

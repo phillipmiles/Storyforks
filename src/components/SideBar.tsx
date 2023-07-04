@@ -25,7 +25,7 @@ const Sidebar = () => {
         transition: 'transform 200ms',
         borderRight: '2px solid black',
         transform: isOpen ? 'translateX(0%)' : 'translateX(-100%)',
-        zIndex: 500,
+        zIndex: 250,
       }}
     >
       <button onClick={toggleIsOpen}>Close</button>
