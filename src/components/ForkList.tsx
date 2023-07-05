@@ -10,7 +10,7 @@ const ForkList = ({ style, forks, children, ...props }) => {
     <div style={style}>
       <Flex
         style={{
-          color: 'white',
+          // color: 'white',
           justifyContent: 'space-between',
           alignItems: 'center',
           textAlign: 'center',
@@ -25,7 +25,7 @@ const ForkList = ({ style, forks, children, ...props }) => {
             fontSize: '28px',
           }}
         >
-          Chapter forks
+          All chapter forks
         </div>
 
         <Flex style={{ marginRight: '24px' }}>
@@ -86,13 +86,13 @@ const ForkList = ({ style, forks, children, ...props }) => {
       <Flex
         style={{
           // backgroundColor: 'white',
-          color: 'white',
+          // color: 'white',
           // marginBottom: '96px',
           justifyContent: 'space-between',
           alignItems: 'center',
           padding: '8px 16px',
           // marginBottom: '8px',
-          border: '1px solid white',
+          // border: '1px solid black',
           borderBottomStyle: 'none',
           textAlign: 'center',
           fontSize: '16px',

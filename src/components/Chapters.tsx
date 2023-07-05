@@ -9,8 +9,8 @@ import PageContentWrap from './generic/PageContentWrap';
 
 const ChapterLine = ({ chapter, title, author }) => (
   <div>
-    <h4 style={{ fontSize: '32px' }}>Chapter {chapter}</h4>
-    {title}
+    <h4 style={{ fontSize: '32px' }}>{title}</h4>
+    Chapter {chapter}
     {author}
   </div>
 );
@@ -36,10 +36,11 @@ const Chapters = ({ children, ...props }: Props): JSX.Element => {
 
   return (
     <Flex
+      // className="container"
       style={{
         height: '100vh',
         left: 0,
-        right: 0,
+        width: '100%',
         position: 'fixed',
         zIndex: 300,
         background: 'white',
@@ -49,15 +50,8 @@ const Chapters = ({ children, ...props }: Props): JSX.Element => {
         transition: 'transform 300ms',
         transform: isOpen ? 'translateX(0%)' : 'translateX(-100%)',
         borderRight: '2px solid black',
-        // padding:
       }}
     >
-      {/* <button
-        onClick={toggleIsOpen}
-        style={{ position: 'absolute', top: '48px', left: '64px' }}
-      >
-        Close
-      </button> */}
       <PageContentWrap>
         <div style={{}}>
           <h2 style={{ textAlign: 'center', marginBottom: '64px' }}>
@@ -69,17 +63,17 @@ const Chapters = ({ children, ...props }: Props): JSX.Element => {
             author="Jane Austin"
           />
           <ChapterLine
-            chapter="1"
+            chapter="2"
             title="There and back again, a hobbits tale"
             author="Jane Austin"
           />
           <ChapterLine
-            chapter="1"
+            chapter="3"
             title="There and back again, a hobbits tale"
             author="Jane Austin"
           />
           <ChapterLine
-            chapter="1"
+            chapter="4"
             title="There and back again, a hobbits tale"
             author="Jane Austin"
           />

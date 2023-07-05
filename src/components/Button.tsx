@@ -1,5 +1,6 @@
 import s from './Button.module.css';
 import GenericButton from './generic/Button';
+import DetachedHoverEffect from './generic/DetachedHoverEffect';
 
 interface Props {
   children: JSX.Element | string | JSX.Element[];
@@ -22,16 +23,19 @@ const Button = ({
   ...props
 }: Props): JSX.Element => {
   return (
-    <GenericButton
-      href={href}
-      onClick={onClick}
-      className={`${s.button} ${outline ? s.outline : undefined} ${className}`}
-      textClassName={`${s.buttonText} ${textClassName}`}
-      style={style}
-      {...props}
-    >
-      {children}
-    </GenericButton>
+    <DetachedHoverEffect className={s.hoverEffect} style={style}>
+      <GenericButton
+        href={href}
+        onClick={onClick}
+        className={`${s.button} ${
+          outline ? s.outline : undefined
+        } ${className}`}
+        textClassName={`${s.buttonText} ${textClassName}`}
+        {...props}
+      >
+        {children}
+      </GenericButton>
+    </DetachedHoverEffect>
   );
 };
 

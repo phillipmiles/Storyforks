@@ -6,5 +6,8 @@
   --background-color-dark: #262c35;
   /* --background-color-dark: #445464; */
   --black-color: #262c35;
+  --text-color: #262c35;
   /* --black-color: #334466; */
+  --button-color-dark: #262c35;
+  --button-color-dark-hover: #3e444d;
 }

@@ -20,14 +20,6 @@ const Button = ({
   textClassName,
   ...props
 }: Props): JSX.Element => {
-  // const text = () => {
-  //   if (textClassName) {
-  //     return <span className={textClassName}>{children}</span>;
-  //   } else {
-  //     return <>{children}</>;
-  //   }
-  // };
-
   if (href !== undefined) {
     return (
       <Link

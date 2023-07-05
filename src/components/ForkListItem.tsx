@@ -8,6 +8,7 @@ const ForkListItem = ({ style, title, chapter, author, label, ...props }) => {
         style={{
           position: 'relative',
           // backgroundColor: 'white',
+          border: '2px solid black',
           justifyContent: 'space-between',
           alignItems: 'center',
           padding: '16px 32px',

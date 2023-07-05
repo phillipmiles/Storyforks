@@ -3,6 +3,7 @@ import Page from '@/components/generic/Page';
 import PageContentWrap from '@/components/generic/PageContentWrap';
 import s from './page.module.css';
 import {
+  Book,
   BookmarkEmpty,
   CheckCircle,
   EditPencil,
@@ -13,11 +14,14 @@ import ForkList from '@/components/ForkList';
 import FocusBlock from '@/components/FocusBlock';
 import Chapters from '@/components/Chapters';
 import TransitionPageBlock from '@/components/TransitionPageBlock';
+import Button from '@/components/Button';
+import ForkListBlock from '@/components/ForksListBlock';
 
 const Example = () => {
   const data = [
     {
-      title: 'A Hill To Die On',
+      // title: 'A Hill To Die On',
+      title: '17 Reasons Why',
       author: 'Katie Wood',
       // label: 'Recommended', // Ones that have many recommendations relative to aggregete stories average.
       // label: 'New', // Ones that are recent and don't have many recommendation
@@ -63,6 +67,8 @@ const Example = () => {
                 padding: '128px',
                 paddingBottom: '0px',
                 backgroundColor: 'white',
+                // fontFamily: 'RecoletaDemo
+                fontFamily: 'Calluna',
               }}
             >
               <div style={{ paddingBottom: '24px', marginBottom: '48px' }}>
@@ -73,6 +79,7 @@ const Example = () => {
                     letterSpacing: 1,
                     color: 'var(--background-color-dark)',
                     marginBottom: '32px',
+                    fontFamily: 'var(--heading-font-family)',
                   }}
                 >
                   Chapter 2
@@ -97,6 +104,7 @@ const Example = () => {
                     style={{
                       // fontSize: '16px',
                       textAlign: 'center',
+                      fontFamily: 'var(--heading-font-family)',
                     }}
                   >
                     By {data[0].author}
@@ -125,37 +133,37 @@ const Example = () => {
           </div> */}
               <p>
                 Ash Ketchum – trainer of Pallet Town, winner of the Orange
-                League and increasingly close runner up in five other regional
+                League and increasingly close runner up in fve other regional
                 tournaments – was... confused.
               </p>
               <p>
-                He was floating in black, empty nothingness. No light, no sound,
-                nothing to use as a reference point – and, at first, he wasn't
+                He was foating in black, empty nothingness. No light, no sound,
+                nothing to use as a reference point – and, at frst, he wasn't
                 sure how he'd ended up there.
               </p>
               <p>
                 When he tried to remember, instead of the most recent moments he
                 found something strange happening. His mind went straight back
-                to the <em>earliest</em> moments he could remember – flicking
-                past at astonishing speed, as though his whole life were
-                flashing before his eyes on fast forward.
+                to the <em>earliest</em> moments he could remember – fcking past
+                at astonishing speed, as though his whole life were fshing
+                before his eyes on fast forward.
               </p>
               <p>
                 A few things stood out, as though he was slowing down to think
                 about them more clearly.
               </p>
               <p>
-                The first time he saw a Pokémon, at barely two years of age,
-                when Professor Oak – taking care of him when Ash's mother was
+                The frst time he saw a Pokemon, at barely two years of age, when
+                Professor Oak – taking care of him when Ash's mother was
                 shopping – was called away suddenly and Ash and Gary were left
                 under the supervision of his distinguished old Arcanine, a
-                gentle Pokémon, but a terror in battle decades before when
+                gentle Pokemon, but a terror in battle decades before when
                 Samuel Oak was the League Champion.
               </p>
               <p>
                 Only reviewing this long forgotten past now did Ash truly
                 realize that he had felt things differently. Other people, he
-                knew, would feel the heat running under the Fire Pokémon's fur.
+                knew, would feel the heat running under the Flre Pokemon's fur.
                 But few would feel the surging, volcanic power in Arcanine's
                 body just from being near – faintly, but still somehow there to
                 be felt.
@@ -184,8 +192,8 @@ const Example = () => {
                 perhaps a little slower than before.
               </p>
               <p>
-                The time he was five, at Cinnabar island on the black sand
-                beaches, and a snatch of haunting song floated through the air.
+                The time he was fve, at Cinnabar island on the black sand
+                beaches, and a snatch of haunting song foated through the air.
               </p>
               <p>
                 <em>I know that music…</em> Ash realized.
@@ -197,12 +205,12 @@ const Example = () => {
                 </em>
               </p>
               <p>
-                Eight, playing in the copse of trees at the end of the road that
-                led to the sea. It was all one big argument with Gary, more than
-                playing... but, as this memory played out like the others, there
-                was a glimpse of something in the trees. Barely a flash, but the
-                memory stopped. And Ash marvelled. This was not what he had
-                expected to find in his childhood.
+                Eight, playing in the copse of 7 trees at the end of the road
+                that led to the sea. It was all one big argument with Gary, more
+                than playing... but, as this memory played out like the others,
+                there was a glimpse of something in the trees. Barely a fash,
+                but the memory stopped. And Ash marvelled. This was not what he
+                had expected to fnd in his childhood.
               </p>
               <p>
                 For what was unmistakably <em>Suicune</em> was in the
@@ -244,12 +252,13 @@ const Example = () => {
                 }}
               >
                 <Flex
-                  style={{ justifyContent: 'center', paddingBottom: '24px' }}
+                  style={{ justifyContent: 'center', paddingBottom: '48px' }}
                 >
                   <Flex
                     style={{
                       justifyContent: 'space-between',
-                      fontSize: '16px',
+                      fontSize: '18px',
+                      fontFamily: 'var(--heading-font-family)',
                     }}
                   >
                     <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
@@ -271,7 +280,7 @@ const Example = () => {
                         marginLeft: '24px',
                       }}
                     >
-                      <CheckCircle style={{ marginRight: '8px' }} />
+                      <Book style={{ marginRight: '8px' }} />
                       Mark as read
                     </Flex>
                   </Flex>
@@ -288,38 +297,17 @@ const Example = () => {
                     alignItems: 'center',
                   }}
                 >
-                  <Flex
-                    style={{
-                      width: '100%',
-                      justifyContent: 'center',
-                      backgroundColor: 'var(--background-color-dark)',
-                      color: 'white',
-                      border: '2px solid var(--background-color-dark)',
-                      textAlign: 'center',
-                      padding: '8px 16px',
-                      marginRight: '16px',
-                    }}
+                  <Button
+                    href=""
+                    style={{ width: '100%', marginRight: '16px' }}
                   >
-                    <EditPencil style={{ marginRight: '8px' }} />
-                    Write the next chapter
-                  </Flex>
-                  <Flex
-                    style={{
-                      maxWidth: '400px',
-                      width: '100%',
-                      justifyContent: 'center',
-                      color: 'var(--background-color-dark)',
-                      border: '2px solid var(--background-color-dark)',
-                      backgroundColor: 'var(--background-color-dark)',
-                      color: 'white',
-                      textAlign: 'center',
-                      padding: '8px 16px',
-                      marginLeft: '16px',
-                    }}
-                  >
-                    <OpenBook style={{ marginRight: '8px' }} />
-                    Read the next chapter
-                  </Flex>
+                    <EditPencil style={{ marginRight: '8px' }} /> Write the next
+                    chapter
+                  </Button>
+                  <Button href="" style={{ width: '100%', marginLeft: '16px' }}>
+                    <OpenBook style={{ marginRight: '8px' }} /> Read the next
+                    chapter
+                  </Button>
                 </Flex>
               </div>
             </div>
@@ -430,69 +418,25 @@ const Example = () => {
                     </span>
                   </Flex>
                   <div style={{ flexGrow: 1 }}>
-                    <p style={{ fontSize: '16px' }}>
+                    <p style={{ fontSize: '16px', fontFamily: 'Calluna' }}>
                       {item.sample.slice(0, 300).trim()}...
                     </p>
                   </div>
-                  <Flex
-                    style={{
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      color: 'var(--primary-color)',
-                      textAlign: 'center',
-                      marginTop: '24px',
-                    }}
-                  >
-                    <span
-                      style={{
-                        padding: '14px 16px',
-                        border: '2px solid var(--background-color-dark)',
-                        backgroundColor: 'var(--background-color-dark)',
-                        color: 'white',
-                        lineHeight: '16px',
-                        width: '100%',
-                      }}
-                    >
-                      Keep reading
-                    </span>
-                  </Flex>
+                  <Button href="" style={{ width: '100%', marginTop: '24px' }}>
+                    Keep reading
+                  </Button>
                 </Flex>
               );
             })}
         </Flex>
-        <div
-          style={{
-            background: 'var(--background-color-dark)',
-            // borderTop: '2px solid #748494',
-            // paddingTop: '92px',
-          }}
-        >
-          <PageContentWrap>
-            {/* <Flex
-            style={{
-              paddingTop: '64px',
-              justifyContent: 'center',
-              color: 'white',
-            }}
-          >
-            <p
-              style={{
-                marginTop: '16px',
-                paddingLeft: '124px',
-                paddingRight: '124px',
-                textDecoration: 'underline',
-                // marginBottom: '96px',
-              }}
-            >
-              Browse all 1274 forks
-            </p>
-          </Flex> */}
+
+        <PageContentWrap style={{ marginBottom: '128px' }}>
+          <ForkListBlock>
             <ForkList
               forks={[...data, ...data, ...data, ...data, ...data, ...data]}
-              style={{ marginTop: '64PX', marginBottom: '96px' }}
             />
-          </PageContentWrap>
-        </div>
+          </ForkListBlock>
+        </PageContentWrap>
       </TransitionPageBlock>
     </Page>
   );
