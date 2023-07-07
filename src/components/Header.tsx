@@ -1,5 +1,13 @@
 'use client';
-import { Menu, User } from 'iconoir-react';
+import {
+  BookStack,
+  Cancel,
+  Home,
+  HomeAlt,
+  Menu,
+  OpenBook,
+  User,
+} from 'iconoir-react';
 import Flex from './generic/Flex';
 import {
   useLayoutEffect,
@@ -10,6 +18,7 @@ import {
 } from 'react';
 import { SidebarContext } from './Providers';
 import s from './Header.module.css';
+import { CrossIcon } from 'react-select/dist/declarations/src/components/indicators';
 
 const Header = () => {
   const { isOpen, toggleIsOpen } = useContext(SidebarContext);
@@ -82,17 +91,50 @@ const Header = () => {
             paddingLeft: '32px',
             paddingRight: '32px',
             height: '96px',
+            marginRight: '24px',
           }}
         >
-          <button
-            onClick={toggleIsOpen}
-            style={{ display: 'flex', marginRight: '24px', marginLeft: '24px' }}
-          >
-            {/* <Suggestion style={{ marginRight: '8px' }} /> */}
-            <Menu style={{ marginRight: '8px' }} />
-            Chapters
-          </button>
-
+          <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
+            {/* <Flex
+              style={{
+                borderRadius: '64px',
+                border: '2px solid black',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: '36px',
+                width: '36px',
+                marginRight: '24px',
+              }}
+            > */}
+            <button
+              onClick={toggleIsOpen}
+              style={{
+                marginRight: '24px',
+                display: 'flex',
+              }}
+            >
+              {/* <Suggestion style={{ marginRight: '8px' }} /> */}
+              {/* <Menu style={{ marginRight: '8px' }} /> */}
+              <Cancel
+                style={{
+                  marginRight: '8px',
+                }}
+              />
+              Close story
+            </button>
+            {/* </Flex> */}
+            <button
+              onClick={toggleIsOpen}
+              style={{
+                display: 'flex',
+              }}
+            >
+              {/* <Suggestion style={{ marginRight: '8px' }} /> */}
+              {/* <Menu style={{ marginRight: '8px' }} /> */}
+              <OpenBook style={{ marginRight: '8px' }} />
+              Chapters
+            </button>
+          </Flex>
           <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
             {/* Login */}
             <Flex

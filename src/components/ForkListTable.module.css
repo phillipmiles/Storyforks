@@ -1,0 +1,17 @@
+.table {
+  border-spacing: 0;
+}
+
+.table th,
+.table td {
+  border-bottom: 2px solid var(--text-color);
+  padding: 16px 16px;
+}
+
+.table tbody tr {
+  cursor: pointer;
+}
+.table tbody tr:hover {
+  background-color: var(--text-color);
+  color: white;
+}

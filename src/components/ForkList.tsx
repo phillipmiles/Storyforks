@@ -3,6 +3,7 @@ import Select from 'react-select';
 import ForkListItem from './ForkListItem';
 import Flex from './generic/Flex';
 import { Filter, FilterList, Star } from 'iconoir-react';
+import CustomCheckbox from './generic/CustomCheckbox';
 // import s from './ForkCard.module.css';
 
 const ForkList = ({ style, forks, children, ...props }) => {
@@ -27,7 +28,6 @@ const ForkList = ({ style, forks, children, ...props }) => {
         >
           All chapter forks
         </div>
-
         <Flex style={{ marginRight: '24px' }}>
           <input
             type="text"
@@ -43,7 +43,10 @@ const ForkList = ({ style, forks, children, ...props }) => {
           <FilterList style={{ marginRight: '8px' }} />
           Filters
         </Flex>
-
+        <input type="checkbox" />
+        <p>Show mature content</p> You must be 18 years or older to view mature
+        content - please enter yourr year of birth to verify your age. If birth
+        year is 18 years ago, ask for full birthdate
         <div style={{ display: 'none' }}>
           <div
             style={{
@@ -83,64 +86,6 @@ const ForkList = ({ style, forks, children, ...props }) => {
           <input type="text" />
         </div>
       </Flex>
-      <Flex
-        style={{
-          // backgroundColor: 'white',
-          // color: 'white',
-          // marginBottom: '96px',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          padding: '8px 16px',
-          // marginBottom: '8px',
-          // border: '1px solid black',
-          borderBottomStyle: 'none',
-          textAlign: 'center',
-          fontSize: '16px',
-        }}
-      >
-        <div
-          style={{
-            flexGrow: 1,
-            // maxWidth: '40%',
-            textAlign: 'left',
-          }}
-        >
-          Title
-        </div>
-        <div
-          style={{
-            minWidth: '200px',
-            // background: 'green',
-          }}
-        >
-          Author
-        </div>
-        <div
-          style={{
-            minWidth: '120px',
-            // background: 'red',
-          }}
-        >
-          Chapter
-        </div>
-        <div
-          style={{
-            minWidth: '150px',
-            // background: 'yellow',
-          }}
-        >
-          Label
-        </div>
-      </Flex>
-      {forks.map((fork, index) => (
-        <ForkListItem
-          key={index}
-          title={fork.title}
-          chapter={fork.chapter}
-          author={fork.author}
-          label={fork.label}
-        />
-      ))}
     </div>
   );
 };

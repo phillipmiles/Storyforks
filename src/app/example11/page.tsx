@@ -7,7 +7,10 @@ import {
   BookmarkEmpty,
   CheckCircle,
   EditPencil,
+  Label,
   OpenBook,
+  OpenInWindow,
+  PasteClipboard,
   Star,
 } from 'iconoir-react';
 import ForkList from '@/components/ForkList';
@@ -16,6 +19,7 @@ import Chapters from '@/components/Chapters';
 import TransitionPageBlock from '@/components/TransitionPageBlock';
 import Button from '@/components/Button';
 import ForkListBlock from '@/components/ForksListBlock';
+import ForkListTable from '@/components/ForkListTable';
 
 const Example = () => {
   const data = [
@@ -280,9 +284,21 @@ const Example = () => {
                         marginLeft: '24px',
                       }}
                     >
-                      <Book style={{ marginRight: '8px' }} />
-                      Mark as read
+                      <Label style={{ marginRight: '8px' }} />
+                      Label
                     </Flex>
+                    <Flex
+                      style={{
+                        marginRight: '24px',
+                        marginLeft: '24px',
+                      }}
+                    >
+                      <OpenInWindow style={{ marginRight: '8px' }} />
+                      Share
+                    </Flex>
+                    {/* <Book style={{ marginRight: '8px' }} />
+                      Mark as read
+                    </Flex> */}
                   </Flex>
                   {/* <Flex>
               <Twitter />
@@ -301,11 +317,11 @@ const Example = () => {
                     href=""
                     style={{ width: '100%', marginRight: '16px' }}
                   >
-                    <EditPencil style={{ marginRight: '8px' }} /> Write the next
+                    <EditPencil style={{ marginRight: '8px' }} /> Write next
                     chapter
                   </Button>
                   <Button href="" style={{ width: '100%', marginLeft: '16px' }}>
-                    <OpenBook style={{ marginRight: '8px' }} /> Read the next
+                    <OpenBook style={{ marginRight: '8px' }} /> Read next
                     chapter
                   </Button>
                 </Flex>
@@ -432,9 +448,13 @@ const Example = () => {
 
         <PageContentWrap style={{ marginBottom: '128px' }}>
           <ForkListBlock>
-            <ForkList
+            <ForkList />
+            <ForkListTable
               forks={[...data, ...data, ...data, ...data, ...data, ...data]}
             />
+            {/* <ForkList
+              forks={[...data, ...data, ...data, ...data, ...data, ...data]}
+            /> */}
           </ForkListBlock>
         </PageContentWrap>
       </TransitionPageBlock>
