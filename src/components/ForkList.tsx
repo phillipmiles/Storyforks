@@ -4,9 +4,24 @@ import ForkListItem from './ForkListItem';
 import Flex from './generic/Flex';
 import { Filter, FilterList, Star } from 'iconoir-react';
 import CustomCheckbox from './generic/CustomCheckbox';
+import DropDownMenu from './DropDownMenu';
+import { createPortal } from 'react-dom';
+import Tether from './generic/Tether';
+import TetherExpander from './generic/TetherExpander';
+import { useState } from 'react';
 // import s from './ForkCard.module.css';
 
+const FiltersMenu = () => (
+  <DropDownMenu style={{}}>
+    <input type="checkbox" />
+    <p>Show mature content</p> You must be 18 years or older to view mature
+    content - please enter yourr year of birth to verify your age. If birth year
+    is 18 years ago, ask for full birthdate
+  </DropDownMenu>
+);
+
 const ForkList = ({ style, forks, children, ...props }) => {
+  const [showFilters, setShowFilters] = useState(false);
   return (
     <div style={style}>
       <Flex
@@ -38,15 +53,30 @@ const ForkList = ({ style, forks, children, ...props }) => {
             }}
           />
         </Flex>
-        <Flex style={{}}>
-          {/* <Suggestion style={{ marginRight: '8px' }} /> */}
-          <FilterList style={{ marginRight: '8px' }} />
-          Filters
-        </Flex>
-        <input type="checkbox" />
-        <p>Show mature content</p> You must be 18 years or older to view mature
-        content - please enter yourr year of birth to verify your age. If birth
-        year is 18 years ago, ask for full birthdate
+        <TetherExpander
+          tetherComponent={<FiltersMenu />}
+          visible={showFilters}
+          sourceAnchorCoord={{ x: '100%', y: '100%' }}
+          menuOriginX="right"
+          menuOriginY="top"
+          transitionDuration={250}
+          fitInViewport={false}
+          shouldUpdatePosition
+          // sourceAnchorCoord={{ x: '100%', y: '100%' }}
+          // tetherAnchorCoord={{
+          //   x: 0,
+          //   y: 0,
+          // }}
+        >
+          <Flex
+            style={{ position: 'relative' }}
+            onClick={() => setShowFilters((state) => !state)}
+          >
+            <FilterList style={{ marginRight: '8px' }} />
+            Filters
+          </Flex>
+        </TetherExpander>
+
         <div style={{ display: 'none' }}>
           <div
             style={{
