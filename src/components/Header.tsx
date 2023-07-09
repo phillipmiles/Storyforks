@@ -19,6 +19,8 @@ import {
 import { SidebarContext } from './Providers';
 import s from './Header.module.css';
 import { CrossIcon } from 'react-select/dist/declarations/src/components/indicators';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => {
   const { isOpen, toggleIsOpen } = useContext(SidebarContext);
@@ -94,35 +96,35 @@ const Header = () => {
             marginRight: '24px',
           }}
         >
-          <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
-            {/* <Flex
-              style={{
-                borderRadius: '64px',
-                border: '2px solid black',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '36px',
-                width: '36px',
-                marginRight: '24px',
-              }}
-            > */}
-            <button
-              onClick={toggleIsOpen}
+          <Flex
+            style={{
+              marginRight: '24px',
+              marginLeft: '24px',
+              alignItems: 'center',
+            }}
+          >
+            <Link
+              href=""
               style={{
                 marginRight: '24px',
                 display: 'flex',
               }}
             >
-              {/* <Suggestion style={{ marginRight: '8px' }} /> */}
-              {/* <Menu style={{ marginRight: '8px' }} /> */}
-              <Cancel
-                style={{
-                  marginRight: '8px',
-                }}
+              <Image
+                src={'/storyforks_icon.svg'}
+                width={56}
+                height={56}
+                alt="Return home"
               />
-              Close story
-            </button>
-            {/* </Flex> */}
+            </Link>
+
+            <span
+              style={{
+                marginRight: '24px',
+                height: '32px',
+                borderLeft: '2px solid var(--text-color)',
+              }}
+            />
             <button
               onClick={toggleIsOpen}
               style={{
@@ -131,7 +133,7 @@ const Header = () => {
             >
               {/* <Suggestion style={{ marginRight: '8px' }} /> */}
               {/* <Menu style={{ marginRight: '8px' }} /> */}
-              <OpenBook style={{ marginRight: '8px' }} />
+              {/* <OpenBook style={{ marginRight: '8px' }} /> */}
               Chapters
             </button>
           </Flex>
