@@ -69,14 +69,19 @@ const Example = () => {
             <div
               style={{
                 padding: '128px',
+                paddingTop: '160px',
                 paddingBottom: '0px',
                 backgroundColor: 'white',
                 // fontFamily: 'RecoletaDemo
                 fontFamily: 'Calluna',
               }}
             >
-              <div style={{ paddingBottom: '24px', marginBottom: '48px' }}>
+              <div
+                // className={s.titleAnimate}
+                style={{ paddingBottom: '24px', marginBottom: '48px' }}
+              >
                 <p
+                  // className={s.titleAnimateLate}
                   style={{
                     textAlign: 'center',
                     textTransform: 'uppercase',
@@ -89,6 +94,7 @@ const Example = () => {
                   Chapter 2
                 </p>
                 <h2
+                  // className={s.titleAnimate}
                   style={{
                     textAlign: 'center',
                     marginBottom: '32px',
@@ -98,6 +104,7 @@ const Example = () => {
                   {data[0].title}
                 </h2>
                 <Flex
+                  // className={s.titleAnimateLate}
                   style={{
                     justifyContent: 'center',
                     marginBottom: '24px',
@@ -135,6 +142,10 @@ const Example = () => {
               tournaments – was... confused.
             </p>
           </div> */}
+              {/* <div
+                className={s.titleAnimate}
+                style={{ animationDelay: '300ms' }}
+              > */}
               <p>
                 Ash Ketchum – trainer of Pallet Town, winner of the Orange
                 League and increasingly close runner up in fve other regional
@@ -220,6 +231,7 @@ const Example = () => {
                 For what was unmistakably <em>Suicune</em> was in the
                 underbrush, observing for but a moment.
               </p>
+              {/* </div> */}
               {/* <div
             style={{
               marginLeft: '-48px',

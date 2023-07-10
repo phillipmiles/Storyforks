@@ -1,3 +1,43 @@
+/* .titleAnimate {
+  opacity: 0;
+  transform: scale(98);
+  animation: fadeIn 1000ms ease-out;
+  animation-fill-mode: both;
+}
+
+.titleAnimateLate {
+  opacity: 0;
+  transform: scale(98);
+  animation: fadeIn 1000ms ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.98) translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0px);
+  }
+}
+
+@keyframes fadeInLate {
+  0% {
+    opacity: 0;
+    transform: scale(0.98) translateY(2px);
+  }
+  40% {
+    opacity: 0;
+    transform: scale(0.98) translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0px);
+  }
+} */
+
 .main {
   display: flex;
   flex-direction: column;

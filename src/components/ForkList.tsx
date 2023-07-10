@@ -68,13 +68,13 @@ const ForkList = ({ style, forks, children, ...props }) => {
           //   y: 0,
           // }}
         >
-          <Flex
-            style={{ position: 'relative' }}
+          <button
+            style={{ display: 'flex', position: 'relative' }}
             onClick={() => setShowFilters((state) => !state)}
           >
             <FilterList style={{ marginRight: '8px' }} />
             Filters
-          </Flex>
+          </button>
         </TetherExpander>
 
         <div style={{ display: 'none' }}>
