@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+button.button {
+  cursor: pointer;
+}
+
 .textClassName {
   display: flex;
   justify-content: center;

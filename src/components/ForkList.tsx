@@ -9,6 +9,7 @@ import { createPortal } from 'react-dom';
 import Tether from './generic/Tether';
 import TetherExpander from './generic/TetherExpander';
 import { useState } from 'react';
+import ButtonText from './ButtonText';
 // import s from './ForkCard.module.css';
 
 const FiltersMenu = () => (
@@ -68,13 +69,10 @@ const ForkList = ({ style, forks, children, ...props }) => {
           //   y: 0,
           // }}
         >
-          <button
-            style={{ display: 'flex', position: 'relative' }}
-            onClick={() => setShowFilters((state) => !state)}
-          >
+          <ButtonText onClick={() => setShowFilters((state) => !state)}>
             <FilterList style={{ marginRight: '8px' }} />
             Filters
-          </button>
+          </ButtonText>
         </TetherExpander>
 
         <div style={{ display: 'none' }}>

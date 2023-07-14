@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import s from './Button.module.css';
+import { MouseEventHandler } from 'react';
 
 interface Props {
   children: string | JSX.Element | JSX.Element[];
   href?: string;
   icon?: JSX.Element;
-  onClick?: Function;
+  onClick?: MouseEventHandler;
   className?: string;
   textClassName?: string;
   style?: object;
@@ -35,7 +36,12 @@ const Button = ({
     );
   } else {
     return (
-      <button className={`${s.button} ${className}`} style={style}>
+      <button
+        onClick={onClick ? onClick : undefined}
+        className={`${s.button} ${className}`}
+        style={style}
+        {...props}
+      >
         <span className={`${s.textClassName} ${textClassName}`}>
           {children}
         </span>

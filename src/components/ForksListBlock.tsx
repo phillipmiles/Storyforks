@@ -2,6 +2,7 @@
 import ContentReveal from './generic/ContentReveal';
 import { useEffect, useRef, useState } from 'react';
 import Flex from './generic/Flex';
+import ButtonText from './ButtonText';
 
 const ForkListBlock = ({ style, children, ...props }) => {
   const [showList, setShowList] = useState(false);
@@ -41,7 +42,7 @@ const ForkListBlock = ({ style, children, ...props }) => {
             right: 0,
           }}
         >
-          <p onClick={toggleShowList}>Show all forks</p>
+          <ButtonText onClick={toggleShowList}>Show all forks</ButtonText>
         </Flex>
       )}
       <div

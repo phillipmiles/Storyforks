@@ -21,6 +21,7 @@ import s from './Header.module.css';
 import { CrossIcon } from 'react-select/dist/declarations/src/components/indicators';
 import Image from 'next/image';
 import Link from 'next/link';
+import ButtonText from './ButtonText';
 
 const Header = () => {
   const { isOpen, toggleIsOpen } = useContext(SidebarContext);
@@ -125,17 +126,12 @@ const Header = () => {
                 borderLeft: '2px solid var(--text-color)',
               }}
             />
-            <button
-              onClick={toggleIsOpen}
-              style={{
-                display: 'flex',
-              }}
-            >
+            <ButtonText onClick={toggleIsOpen}>
               {/* <Suggestion style={{ marginRight: '8px' }} /> */}
               {/* <Menu style={{ marginRight: '8px' }} /> */}
               {/* <OpenBook style={{ marginRight: '8px' }} /> */}
               Chapters
-            </button>
+            </ButtonText>
           </Flex>
           <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
             {/* Login */}

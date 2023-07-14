@@ -20,6 +20,7 @@ import TransitionPageBlock from '@/components/TransitionPageBlock';
 import Button from '@/components/Button';
 import ForkListBlock from '@/components/ForksListBlock';
 import ForkListTable from '@/components/ForkListTable';
+import ButtonText from '@/components/ButtonText';
 
 const Example = () => {
   const data = [
@@ -277,40 +278,23 @@ const Example = () => {
                       fontFamily: 'var(--heading-font-family)',
                     }}
                   >
-                    <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
+                    <ButtonText className={s.storyActionButtons}>
                       <Star style={{ marginRight: '8px' }} />
                       Recommend
-                    </Flex>
-                    <Flex
-                      style={{
-                        marginRight: '24px',
-                        marginLeft: '24px',
-                      }}
-                    >
+                    </ButtonText>
+
+                    <ButtonText className={s.storyActionButtons}>
                       <BookmarkEmpty style={{ marginRight: '8px' }} />
                       Bookmark
-                    </Flex>
-                    <Flex
-                      style={{
-                        marginRight: '24px',
-                        marginLeft: '24px',
-                      }}
-                    >
+                    </ButtonText>
+                    <ButtonText className={s.storyActionButtons}>
                       <Label style={{ marginRight: '8px' }} />
                       Label
-                    </Flex>
-                    <Flex
-                      style={{
-                        marginRight: '24px',
-                        marginLeft: '24px',
-                      }}
-                    >
+                    </ButtonText>
+                    <ButtonText className={s.storyActionButtons}>
                       <OpenInWindow style={{ marginRight: '8px' }} />
                       Share
-                    </Flex>
-                    {/* <Book style={{ marginRight: '8px' }} />
-                      Mark as read
-                    </Flex> */}
+                    </ButtonText>
                   </Flex>
                   {/* <Flex>
               <Twitter />

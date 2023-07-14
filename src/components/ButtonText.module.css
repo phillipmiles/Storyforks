@@ -1,0 +1,28 @@
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.hoverEffect {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+body .hoverEffect::before {
+  opacity: 0;
+  top: auto;
+  bottom: 0;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0%);
+  transition-property: opacity, transform;
+  transition-duration: 200ms;
+}
+
+body .hoverEffect:hover::before {
+  opacity: 1;
+  transform: scaleX(100%);
+}

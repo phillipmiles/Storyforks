@@ -26,7 +26,7 @@ import Button from '@/components/Button';
 import GenericButton from '@/components/generic/Button';
 import HeroBackground from '@/components/HeroBackground';
 import Image from 'next/image';
-import ButtonText from '@/components/generic/ButtonText';
+import ButtonText from '@/components/ButtonText';
 
 const Example = () => {
   const data = [
