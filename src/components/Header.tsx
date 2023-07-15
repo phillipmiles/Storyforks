@@ -22,6 +22,7 @@ import { CrossIcon } from 'react-select/dist/declarations/src/components/indicat
 import Image from 'next/image';
 import Link from 'next/link';
 import ButtonText from './ButtonText';
+import AccountButton from './AccountButton';
 
 const Header = () => {
   const { isOpen, toggleIsOpen } = useContext(SidebarContext);
@@ -134,19 +135,7 @@ const Header = () => {
             </ButtonText>
           </Flex>
           <Flex style={{ marginRight: '24px', marginLeft: '24px' }}>
-            {/* Login */}
-            <Flex
-              style={{
-                borderRadius: '64px',
-                border: '2px solid black',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '36px',
-                width: '36px',
-              }}
-            >
-              <User />
-            </Flex>
+            <AccountButton />
           </Flex>
         </Flex>
       </header>

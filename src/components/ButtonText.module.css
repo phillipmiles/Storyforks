@@ -6,11 +6,6 @@
   padding: 8px;
 }
 
-.hoverEffect {
-  margin-left: 24px;
-  margin-right: 24px;
-}
-
 body .hoverEffect::before {
   opacity: 0;
   top: auto;

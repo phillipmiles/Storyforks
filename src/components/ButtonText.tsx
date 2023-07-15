@@ -8,6 +8,7 @@ interface Props {
   href?: string;
   onClick?: MouseEventHandler | undefined;
   className?: string;
+  hoverEffectClassName?: string;
   textClassName?: string;
   style?: object;
 }
@@ -17,12 +18,13 @@ const ButtonText = ({
   href,
   onClick,
   className,
+  hoverEffectClassName,
   style,
   textClassName,
   ...props
 }: Props): JSX.Element => {
   return (
-    <DetachedHoverEffect className={s.hoverEffect}>
+    <DetachedHoverEffect className={`${s.hoverEffect} ${hoverEffectClassName}`}>
       <GenericButton
         href={href}
         onClick={onClick}

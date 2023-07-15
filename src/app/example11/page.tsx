@@ -278,20 +278,32 @@ const Example = () => {
                       fontFamily: 'var(--heading-font-family)',
                     }}
                   >
-                    <ButtonText className={s.storyActionButtons}>
+                    <ButtonText
+                      className={s.storyActionButtons}
+                      hoverEffectClassName={s.storyActionButtonsWrap}
+                    >
                       <Star style={{ marginRight: '8px' }} />
                       Recommend
                     </ButtonText>
 
-                    <ButtonText className={s.storyActionButtons}>
+                    <ButtonText
+                      className={s.storyActionButtons}
+                      hoverEffectClassName={s.storyActionButtonsWrap}
+                    >
                       <BookmarkEmpty style={{ marginRight: '8px' }} />
                       Bookmark
                     </ButtonText>
-                    <ButtonText className={s.storyActionButtons}>
+                    <ButtonText
+                      className={s.storyActionButtons}
+                      hoverEffectClassName={s.storyActionButtonsWrap}
+                    >
                       <Label style={{ marginRight: '8px' }} />
                       Label
                     </ButtonText>
-                    <ButtonText className={s.storyActionButtons}>
+                    <ButtonText
+                      className={s.storyActionButtons}
+                      hoverEffectClassName={s.storyActionButtonsWrap}
+                    >
                       <OpenInWindow style={{ marginRight: '8px' }} />
                       Share
                     </ButtonText>

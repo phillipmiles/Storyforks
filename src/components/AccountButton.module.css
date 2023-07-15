@@ -1,0 +1,33 @@
+.button {
+  display: flex;
+  border-radius: 100px;
+  border: 2px solid black;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.hoverEffect {
+  display: flex;
+  width: 100%;
+  width: 30px;
+  height: 30px;
+}
+
+.hoverEffect::before {
+  inset: 0 0;
+  border: 2px solid black;
+  border-radius: 100px;
+  opacity: 0;
+  transition-property: opacity, inset;
+  transition-duration: 200ms;
+}
+
+.hoverEffect:hover::before {
+  opacity: 1;
+  inset: -10px -10px;
+  transition-duration: 100ms;
+}

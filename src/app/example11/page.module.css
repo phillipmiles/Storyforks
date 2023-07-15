@@ -4,6 +4,11 @@
   margin-right: 24px; */
 }
 
+.storyActionButtonsWrap {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
 /* .titleAnimate {
   opacity: 0;
   transform: scale(98);
