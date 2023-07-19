@@ -69,7 +69,7 @@ const Example = () => {
           <PageContentWrap>
             <div
               style={{
-                padding: '128px',
+                padding: '160px',
                 paddingTop: '160px',
                 paddingBottom: '0px',
                 backgroundColor: 'white',
@@ -442,7 +442,7 @@ const Example = () => {
                     </span>
                   </Flex>
                   <div style={{ flexGrow: 1 }}>
-                    <p style={{ fontSize: '16px', fontFamily: 'Calluna' }}>
+                    <p style={{ fontSize: '18px', fontFamily: 'Calluna' }}>
                       {item.sample.slice(0, 300).trim()}...
                     </p>
                   </div>

@@ -8,13 +8,18 @@ interface Props {
   outline?: boolean;
 }
 
-const DropDownMenu = ({ children, style, ...props }: Props): JSX.Element => {
+const DropDownMenuItem = ({
+  children,
+  style,
+  ...props
+}: Props): JSX.Element => {
   return (
     <div
       style={{
-        backgroundColor: 'white',
-        minWidth: '300px',
-        border: '2px solid var(--text-color)',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         ...style,
       }}
     >
@@ -23,4 +28,4 @@ const DropDownMenu = ({ children, style, ...props }: Props): JSX.Element => {
   );
 };
 
-export default DropDownMenu;
+export default DropDownMenuItem;

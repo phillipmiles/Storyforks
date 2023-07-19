@@ -1,28 +1,75 @@
 'use client';
+import { useEffect, useRef } from 'react';
 import Select from 'react-select';
 import ForkListItem from './ForkListItem';
 import Flex from './generic/Flex';
 import { Filter, FilterList, Star } from 'iconoir-react';
 import CustomCheckbox from './generic/CustomCheckbox';
+import CheckboxIcon from './CheckboxIcon';
 import DropDownMenu from './DropDownMenu';
 import { createPortal } from 'react-dom';
 import Tether from './generic/Tether';
 import TetherExpander from './generic/TetherExpander';
 import { useState } from 'react';
 import ButtonText from './ButtonText';
+import DropDownMenuItem from './DropDownMenuItem';
 // import s from './ForkCard.module.css';
 
 const FiltersMenu = () => (
   <DropDownMenu style={{}}>
-    <input type="checkbox" />
+    <DropDownMenuItem>
+      <label
+        style={{
+          padding: '8px',
+          flexGrow: 1,
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        {/* <input type="checkbox" /> */}
+        <CustomCheckbox checked CheckboxComponent={CheckboxIcon} />
+        <span style={{ marginLeft: '16px' }}>Show mature content</span>
+      </label>
+    </DropDownMenuItem>
+    <DropDownMenuItem>
+      <label
+        style={{
+          padding: '8px',
+          flexGrow: 1,
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        {/* <input type="checkbox" /> */}
+        <CustomCheckbox CheckboxComponent={CheckboxIcon} />
+        <span style={{ marginLeft: '16px' }}>Show mature content</span>
+      </label>
+    </DropDownMenuItem>
+    {/* <input type="checkbox" />
     <p>Show mature content</p> You must be 18 years or older to view mature
     content - please enter yourr year of birth to verify your age. If birth year
-    is 18 years ago, ask for full birthdate
+    is 18 years ago, ask for full birthdate */}
   </DropDownMenu>
 );
 
 const ForkList = ({ style, forks, children, ...props }) => {
   const [showFilters, setShowFilters] = useState(false);
+  const menuRef = useRef();
+
+  useEffect(() => {
+    const ifClick = (event) => {
+      if (showFilters && !menuRef.current.contains(event.target)) {
+        setShowFilters(false);
+      }
+    };
+
+    document.addEventListener('click', ifClick);
+
+    return () => {
+      document.removeEventListener('click', ifClick);
+    };
+  }, [showFilters]);
+
   return (
     <div style={style}>
       <Flex
@@ -55,7 +102,11 @@ const ForkList = ({ style, forks, children, ...props }) => {
           />
         </Flex>
         <TetherExpander
-          tetherComponent={<FiltersMenu />}
+          tetherComponent={
+            <div ref={menuRef}>
+              <FiltersMenu />
+            </div>
+          }
           visible={showFilters}
           sourceAnchorCoord={{ x: '100%', y: '100%' }}
           menuOriginX="right"
@@ -63,11 +114,6 @@ const ForkList = ({ style, forks, children, ...props }) => {
           transitionDuration={250}
           fitInViewport={false}
           shouldUpdatePosition
-          // sourceAnchorCoord={{ x: '100%', y: '100%' }}
-          // tetherAnchorCoord={{
-          //   x: 0,
-          //   y: 0,
-          // }}
         >
           <ButtonText onClick={() => setShowFilters((state) => !state)}>
             <FilterList style={{ marginRight: '8px' }} />

@@ -33,14 +33,16 @@ const ForkListTable = ({ style, forks, children, ...props }) => {
               <td>Chapter 3</td>
               <td>{fork.label}</td>
               <td>
-                <EyeEmpty />
-                <BookmarkEmpty />
-                <Star />
+                <EyeEmpty style={{ marginRight: '4px' }} />
+                <BookmarkEmpty style={{ marginRight: '4px' }} />
+                <Star style={{ marginRight: '4px' }} />
               </td>
-              <td>
-                <Heart />
-                <Trash />
-                <WarningTriangle />
+              <td
+              //style={{ fontSize: '16px' }}
+              >
+                <Heart style={{ marginRight: '4px' }} />
+                <Trash style={{ marginRight: '4px' }} />
+                <WarningTriangle style={{ marginRight: '4px' }} />
               </td>
             </tr>
           ))}
