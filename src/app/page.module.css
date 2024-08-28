@@ -42,8 +42,8 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, auto));
-  width: var(--max-width);
   max-width: 100%;
+  width: var(--max-width);
 }
 
 .card {
@@ -70,6 +70,7 @@
   font-size: 0.9rem;
   line-height: 1.5;
   max-width: 30ch;
+  text-wrap: balance;
 }
 
 .center {
@@ -97,7 +98,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -225,238 +226,5 @@
   }
   to {
     transform: rotate(0deg);
-  }
-}
-
-.testMotionButton {
-  border-width: 2px;
-  border-style: solid;
-  /* animation: btnMotion 3000ms infinite linear; */
-  /* #AACCEE', */
-  /* background: linear-gradient(45deg, blue, red); */
-  border-color: #4b6095;
-  /* box-shadow: inset 0px 0px 0px 1px #aaccee; */
-  /* box-shadow: inset 0px 0px 0px 1px #4b6095; */
-}
-
-@keyframes btnMotion {
-  0% {
-    box-shadow: 0px 0px 0px 1px #aaccee;
-    border-radius: 32px 32px 32px 32px;
-  }
-  20% {
-    box-shadow: 0px 6px 0px 1px #aaccee;
-    border-radius: 16px 16px 64px 64px;
-  }
-  24% {
-    box-shadow: 0px -5px 0px 1px #aaccee;
-    border-radius: 56px 56px 18px 18px;
-  }
-
-  28% {
-    box-shadow: 0px 4px 0px 1px #aaccee;
-    border-radius: 20px 20px 48px 48px;
-  }
-
-  34% {
-    box-shadow: 0px -2px 0px 1px #aaccee;
-    border-radius: 42px 42px 24px 24px;
-  }
-  41% {
-    box-shadow: 0px 2px 0px 1px #aaccee;
-    border-radius: 28px 28px 35px 35px;
-  }
-  47% {
-    box-shadow: 0px 1px 0px 1px #aaccee;
-    border-radius: 32px 32px 30px 30px;
-  }
-
-  52% {
-    box-shadow: 0px 0px 0px 1px #aaccee;
-    border-radius: 32px 32px 32px 32px;
-  }
-  100% {
-    box-shadow: 0px 0px 0px 1px #aaccee;
-    border-radius: 32px 32px 32px 32px;
-  }
-}
-
-.testMotionPath {
-  /* animation: move 3000ms infinite linear; */
-
-  /* transition: transform 3000ms; */
-}
-
-@keyframes move {
-  0% {
-    transform: translate(-50%, 12px) scale(0.4);
-  }
-  20% {
-    transform: translate(-50%, 12px) scale(1);
-    /* offset-distance: 0%; */
-  }
-  30% {
-    transform: translate(-50%, 120px) scale(1);
-  }
-  40% {
-    transform: translate(-50%, 265px) scale(0.4);
-  }
-  100% {
-    transform: translate(-50%, 265px) scale(0.2);
-  }
-}
-
-.testMotionPath2 {
-  offset-path: path('M 0 0, h 86, a 28 28, 0, 0, 1, 0 56, h -82, v 256');
-  /* offset-path: path('m 0,0'); */
-  /* animation: move2 3000ms infinite linear; */
-}
-
-@keyframes move2 {
-  0% {
-    offset-distance: 0%;
-  }
-  100% {
-    offset-distance: 100%;
-  }
-}
-
-.title {
-  opacity: 1;
-  transform: scale(1);
-  animation: fadeIn 1000ms ease-out;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.subTitles {
-  opacity: 1;
-  transform: scale(1);
-  animation: fadeInLate 1000ms ease-out;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.98) translateY(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0px);
-  }
-}
-
-@keyframes fadeInLate {
-  0% {
-    opacity: 0;
-    transform: scale(0.98) translateY(2px);
-  }
-  40% {
-    opacity: 0;
-    transform: scale(0.98) translateY(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0px);
-  }
-}
-
-a.callToAction1 {
-  border: 2px solid var(--primary-color);
-  padding: 8px 0px;
-  border-radius: 220px;
-  /* margin-bottom: 24px; */
-  width: 100%;
-  max-width: 280px;
-  animation: appear;
-  animation-duration: 500ms;
-  animation-timing-function: ease-in;
-  animation-fill-mode: both;
-  position: relative;
-  white-space: nowrap;
-}
-
-button.callToAction2 {
-  white-space: nowrap;
-  padding: 8px 0px;
-  position: relative;
-  width: 100%;
-  max-width: 280px;
-  animation: appear;
-  animation-delay: 100ms;
-  animation-duration: 500ms;
-  animation-timing-function: ease-in;
-  animation-fill-mode: backwards;
-  /* width: 48px;
-  height: 48px; */
-}
-
-.callToAction1Inner {
-  animation-name: test;
-  animation-duration: 500ms;
-  animation-timing-function: ease-in;
-  animation-fill-mode: backwards;
-}
-
-.callToAction2Inner {
-  animation-name: test;
-  animation-delay: 100ms;
-  animation-duration: 500ms;
-  animation-timing-function: ease-in;
-  animation-fill-mode: backwards;
-}
-
-@keyframes appear {
-  0% {
-    transform: scale(0%);
-    width: 48px;
-    height: 48px;
-  }
-  50% {
-    transform: scale(100%);
-    width: 48px;
-    height: 48px;
-  }
-  /* 50% {
-    transform: scale(100%);
-    width: 48px;
-  } */
-  100% {
-    transform: scale(100%);
-    /* width: 280px; */
-  }
-}
-
-@keyframes test {
-  0% {
-    opacity: 0;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.callToActionLineOut {
-  animation-name: lineOut;
-  animation-delay: 500ms;
-  animation-duration: 200ms;
-  animation-timing-function: ease-in;
-  animation-fill-mode: backwards;
-  transform-origin: 0 0;
-}
-
-@keyframes lineOut {
-  0% {
-    transform: scaleY(0%);
-  }
-  100% {
-    transform: scaleY(100%);
   }
 }
