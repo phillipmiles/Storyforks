@@ -26,6 +26,9 @@ const Navigation = ({ children }) => {
         <Link href="/" className={s.navItem}>
           Home
         </Link>
+        <Link href="/write" className={s.navItem}>
+          Write
+        </Link>
       </div>
       <div>
         <Link href="/login" className={s.navItem}>
