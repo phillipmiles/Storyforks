@@ -54,10 +54,11 @@ const Chapter = ({ params }) => {
         <div>
           Previous Chapters
           <button onClick={handleShowPrevious}>Show previous chapters</button>
-          {ancestors.map((ancestor) => (
+          {ancestors.toReversed().map((ancestor, index) => (
             <div>
               <Link href={`/chapter/${ancestor.id}`}>
                 <div>
+                  <h5>Chapter {index + 1}</h5>
                   <h4>{ancestor.title}</h4>
                   <p>{ancestor.numChildren} Forks</p>
                 </div>
