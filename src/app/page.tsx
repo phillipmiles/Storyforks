@@ -31,8 +31,9 @@ const Home: NextPage = () => {
         <div style={{ border: '1px solid black' }}>
           <Link href={`/chapter/${chapter.id}`} key={chapter.id}>
             <p>Chapter {chapter.ancestors.length + 1}</p>
-            <h4>{chapter.title}</h4>
+            <h3>{chapter.title}</h3>
             <p>By {chapter.author}</p>
+            <p>{chapter.numChildren} forks</p>
           </Link>
         </div>
       ))}

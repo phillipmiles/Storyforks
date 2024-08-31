@@ -85,6 +85,7 @@ const Chapter = ({ params }) => {
           <div>
             <Link href={`/chapter/${nextChapter.id}`}>
               <h4>{nextChapter.title}</h4>
+              <p>{nextChapter.numChildren} forks</p>
             </Link>
           </div>
         ))}
