@@ -8,7 +8,7 @@ import PageBody from '@/components/PageBody';
 import Navigation from '@/components/Navigation';
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
-import { getRootChapters } from '@/lib/firebase/api';
+import { getDocRef, getRootChapters } from '@/lib/firebase/api';
 
 const Home: NextPage = () => {
   const [startChapters, setStartChapters] = useState([]);
@@ -17,6 +17,7 @@ const Home: NextPage = () => {
     const run = async () => {
       const result = await getRootChapters();
 
+      // Display chapters without the userData
       setStartChapters(result);
     };
     run();
@@ -27,12 +28,17 @@ const Home: NextPage = () => {
       <Navigation />
       <h1>Home</h1>
       {startChapters.map((chapter) => (
-        <div>
+        <div style={{ border: '1px solid black' }}>
           <Link href={`/chapter/${chapter.id}`} key={chapter.id}>
-            {chapter.title}
+            <p>Chapter {chapter.ancestors.length + 1}</p>
+            <h4>{chapter.title}</h4>
+            <p>By {chapter.author}</p>
           </Link>
         </div>
       ))}
+      <ul>
+        <li>Give users the option to hide chapter title in the UI</li>
+      </ul>
     </PageBody>
   );
 };

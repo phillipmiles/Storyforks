@@ -31,6 +31,9 @@ const Navigation = ({ children }) => {
         </Link>
       </div>
       <div>
+        <Link href="/account" className={s.navItem}>
+          Account
+        </Link>
         <Link href="/login" className={s.navItem}>
           Login
         </Link>

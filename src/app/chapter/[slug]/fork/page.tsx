@@ -1,14 +1,16 @@
 'use client';
 import Navigation from '@/components/Navigation';
 import PageBody from '@/components/PageBody';
-import { addChapter, getChapter } from '@/lib/firebase/api';
-import { useEffect, useState } from 'react';
+import { AuthContext } from '@/components/Providers';
+import { addChapter, forkChapter, getChapter } from '@/lib/firebase/api';
+import { useContext, useEffect, useState } from 'react';
 
 const Post = ({ params }) => {
   const [title, setTitle] = useState('');
   const [document, setDocument] = useState('');
   const [queueSave, setQueueSave] = useState(false);
   const [chapter, setChapter] = useState();
+  const { authUser } = useContext(AuthContext);
 
   useEffect(() => {
     const run = async () => {
@@ -20,19 +22,19 @@ const Post = ({ params }) => {
   }, [params]);
 
   const handleSubmit = () => {
+    if (!chapter) return;
     console.log(document);
-    // addChapter({
-    //   title: title,
-    //   content: document,
-    //   root: null,
-    //   parent: null,
-    //   ancestors: [],
-    //   numChildren: 0,
-    //   numDecendants: 0,
-    //   timeCreated: new Date(),
-    // });
-    // send to database
-    // Reroute
+    forkChapter(params.slug, {
+      title: title,
+      content: document,
+      author: authUser.public.displayName,
+      root: chapter.root ? chapter.root : chapter.id,
+      parent: chapter.id,
+      ancestors: [...chapter.ancestors, chapter.id],
+      numChildren: 0,
+      numDecendants: 0,
+      timeCreated: new Date(),
+    });
   };
 
   const handleChange = (e) => {

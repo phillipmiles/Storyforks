@@ -9,6 +9,10 @@ import {
 
 import { auth } from './clientApp';
 
+export const getAuthUser = () => {
+  return auth.currentUser;
+};
+
 // Callback is passed a user object if logged in https://firebase.google.com/docs/reference/js/auth.user
 export function onAuthStateChanged(callback) {
   return _onAuthStateChanged(auth, callback);
