@@ -67,8 +67,10 @@ const Chapter = ({ params }) => {
           ))}
         </div>
       )}
+      <hr />
       {chapter && (
         <div>
+          <h5>Chapter {chapter.ancestors.length + 1}</h5>
           <h1>{chapter.title}</h1>
           <p>By {chapter.author}</p>
           {chapter.contentParsed.map((paragraph, index) => (
