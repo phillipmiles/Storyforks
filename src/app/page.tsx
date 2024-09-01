@@ -9,6 +9,7 @@ import Navigation from '@/components/Navigation';
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import { getDocRef, getRootChapters } from '@/lib/firebase/api';
+import ChapterTile from '@/components/ChapterTile';
 
 const Home: NextPage = () => {
   const [startChapters, setStartChapters] = useState([]);
@@ -28,14 +29,15 @@ const Home: NextPage = () => {
       <Navigation />
       <h1>Home</h1>
       {startChapters.map((chapter) => (
-        <div style={{ border: '1px solid black' }}>
-          <Link href={`/chapter/${chapter.id}`} key={chapter.id}>
-            <p>Chapter {chapter.ancestors.length + 1}</p>
-            <h3>{chapter.title}</h3>
-            <p>By {chapter.author}</p>
-            <p>{chapter.numChildren} forks</p>
-          </Link>
-        </div>
+        <ChapterTile
+          title={chapter.title}
+          author={chapter.author}
+          id={chapter.id}
+          href={`/chapter/${chapter.id}`}
+          key={chapter.id}
+          numChildren={chapter.numChildren}
+          numChapter={chapter.ancestors.length + 1}
+        />
       ))}
       <ul>
         <li>Give users the option to hide chapter title in the UI</li>

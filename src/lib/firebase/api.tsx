@@ -95,6 +95,28 @@ export const getChapter = async (id) => {
   }
 };
 
+export const getMyChapters = async () => {
+  try {
+    const userDoc = getAuthUserDoc();
+
+    const q = query(
+      collection(db, 'chapters'),
+      where('userRef', '==', userDoc)
+    );
+    const querySnapshot = await getDocs(q);
+
+    const data = [];
+    querySnapshot.forEach((doc) => {
+      data.push({ id: doc.id, ...doc.data() });
+      // // doc.data() is never undefined for query doc snapshots
+      // console.log(doc.id, ' => ', doc.data());
+    });
+    return data;
+  } catch (error) {
+    console.error('Error getting my chapters', error);
+  }
+};
+
 export const getChildrenChapters = async (parentId) => {
   try {
     const q = query(

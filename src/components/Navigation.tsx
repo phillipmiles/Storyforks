@@ -34,6 +34,9 @@ const Navigation = ({ children }) => {
         <Link href="/account" className={s.navItem}>
           Account
         </Link>
+        <Link href="/account/chapters" className={s.navItem}>
+          My chapters
+        </Link>
         <Link href="/login" className={s.navItem}>
           Login
         </Link>

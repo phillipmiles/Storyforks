@@ -1,5 +1,6 @@
 'use client';
 
+import ChapterTile from '@/components/ChapterTile';
 import Navigation from '@/components/Navigation';
 import PageBody from '@/components/PageBody';
 import {
@@ -54,16 +55,16 @@ const Chapter = ({ params }) => {
         <div>
           Previous Chapters
           <button onClick={handleShowPrevious}>Show previous chapters</button>
-          {ancestors.toReversed().map((ancestor, index) => (
-            <div>
-              <Link href={`/chapter/${ancestor.id}`}>
-                <div>
-                  <h5>Chapter {index + 1}</h5>
-                  <h4>{ancestor.title}</h4>
-                  <p>{ancestor.numChildren} Forks</p>
-                </div>
-              </Link>
-            </div>
+          {ancestors.toReversed().map((ancestor) => (
+            <ChapterTile
+              title={ancestor.title}
+              author={ancestor.author}
+              id={ancestor.id}
+              href={`/chapter/${ancestor.id}`}
+              key={ancestor.id}
+              numChildren={ancestor.numChildren}
+              numChapter={ancestor.ancestors.length + 1}
+            />
           ))}
         </div>
       )}
@@ -82,12 +83,15 @@ const Chapter = ({ params }) => {
       <div>
         <h3>Continue reading</h3>
         {nextChapters.map((nextChapter) => (
-          <div>
-            <Link href={`/chapter/${nextChapter.id}`}>
-              <h4>{nextChapter.title}</h4>
-              <p>{nextChapter.numChildren} forks</p>
-            </Link>
-          </div>
+          <ChapterTile
+            title={nextChapter.title}
+            author={nextChapter.author}
+            id={nextChapter.id}
+            href={`/chapter/${nextChapter.id}`}
+            key={nextChapter.id}
+            numChildren={nextChapter.numChildren}
+            numChapter={nextChapter.ancestors.length + 1}
+          />
         ))}
       </div>
     </PageBody>
