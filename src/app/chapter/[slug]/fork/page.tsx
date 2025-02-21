@@ -31,6 +31,7 @@ const Post = ({ params }) => {
       root: chapter.root ? chapter.root : chapter.id,
       parent: chapter.id,
       ancestors: [...chapter.ancestors, chapter.id],
+      numAncestors: chapter.ancestors.length + 1,
       numChildren: 0,
       numDecendants: 0,
       timeCreated: new Date(),

@@ -19,6 +19,7 @@ const Post = () => {
       root: null,
       parent: null,
       ancestors: [],
+      numAncestors: 0,
       numChildren: 0,
       numDecendants: 0,
       timeCreated: new Date(),

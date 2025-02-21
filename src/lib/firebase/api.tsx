@@ -15,6 +15,8 @@ import {
   documentId,
   updateDoc,
   increment,
+  orderBy,
+  limit,
 } from 'firebase/firestore';
 
 export const getAuthUserDoc = () => {
@@ -62,17 +64,47 @@ export const addChapter = async (data) => {
   }
 };
 
+export const getDeepestDescendant = async (chapterId) => {
+  let deepestDescendantDoc;
+  const q = query(
+    collection(db, 'chapters'),
+    where('ancestors', 'array-contains', chapterId),
+    orderBy('numAncestors', 'desc'),
+    limit(1)
+  );
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    deepestDescendantDoc = { id: doc.id, ...doc.data() };
+  });
+
+  return deepestDescendantDoc;
+};
+
 export const getRootChapters = async () => {
   try {
     const q = query(collection(db, 'chapters'), where('parent', '==', null));
     const querySnapshot = await getDocs(q);
 
     const data = [];
+
     querySnapshot.forEach((doc) => {
       data.push({ id: doc.id, ...doc.data() });
       // // doc.data() is never undefined for query doc snapshots
       // console.log(doc.id, ' => ', doc.data());
     });
+    // for (const [index, doc] of data.entries()) {
+    //   const q2 = query(
+    //     collection(db, 'chapters'),
+    //     where('ancestors', 'array-contains', doc.id),
+    //     orderBy('numAncestors', 'desc'),
+    //     limit(1)
+    //   );
+    //   const querySnapshot2 = await getDocs(q2);
+    //   querySnapshot2.forEach((doc2) => {
+    //     data[index].depth = doc2.data().numAncestors;
+    //   });
+    // }
+
     return data;
   } catch (error) {
     console.error('Error adding new chapter', error);

@@ -17,7 +17,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     const run = async () => {
       const result = await getRootChapters();
-
+      console.log('RESULT', result);
       // Display chapters without the userData
       setStartChapters(result);
     };
