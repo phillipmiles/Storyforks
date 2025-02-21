@@ -5,9 +5,11 @@ import { AuthContext } from '@/components/Providers';
 import { addChapter, forkChapter, getChapter } from '@/lib/firebase/api';
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 const Post = () => {
   const { slug } = useParams<{ slug: string }>();
+  const router = useRouter();
   const [title, setTitle] = useState('');
   const [document, setDocument] = useState('');
   const [queueSave, setQueueSave] = useState(false);
@@ -23,10 +25,9 @@ const Post = () => {
     run();
   }, [slug]);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!chapter) return;
-    console.log(document);
-    forkChapter(params.slug, {
+    const newChapter = await forkChapter(slug, {
       title: title,
       content: document,
       author: authUser.public.displayName,
@@ -38,6 +39,8 @@ const Post = () => {
       numDecendants: 0,
       timeCreated: new Date(),
     });
+
+    router.push(`/chapter/${newChapter.id}`);
   };
 
   const handleChange = (e) => {

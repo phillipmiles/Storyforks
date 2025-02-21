@@ -49,16 +49,15 @@ export const addChapter = async (data) => {
     const collectionRef = collection(db, 'chapters');
     const docRef = doc(collectionRef);
 
-    console.log({
+    const payload = {
       ...data,
       root: docRef.id,
       userRef: userDoc,
-    });
-    await setDoc(docRef, {
-      ...data,
-      root: docRef.id,
-      userRef: userDoc,
-    });
+    };
+
+    await setDoc(docRef, payload);
+
+    return { id: docRef.id, ...payload };
   } catch (error) {
     console.error('Error adding new chapter', error);
   }
@@ -111,7 +110,7 @@ export const getRootChapters = async () => {
   }
 };
 
-export const getChapter = async (id) => {
+export const getChapter = async (id: string) => {
   try {
     const docRef = doc(db, 'chapters', id);
     const docSnap = await getDoc(docRef);
@@ -149,7 +148,7 @@ export const getMyChapters = async () => {
   }
 };
 
-export const getChildrenChapters = async (parentId) => {
+export const getChildrenChapters = async (parentId: string) => {
   try {
     const q = query(
       collection(db, 'chapters'),
@@ -184,28 +183,16 @@ export const getAncestors = async (ancestors) => {
   }
 };
 
-export const forkChapter = async (chapterId, payload) => {
+export const forkChapter = async (chapterId: string, payload) => {
   try {
+    let returnObj;
+
     await runTransaction(db, async (transaction) => {
       const userDoc = getAuthUserDoc();
 
       const collectionRef = collection(db, 'chapters');
       const docRef = doc(collectionRef, chapterId);
-
-      // await updateDoc(docRef, {
-      //   numChildren: increment(1),
-      // });
-
-      // const docSnap = await transaction.get(docRef);
-
-      // if (!docSnap.exists()) {
-      //   throw 'Document does not exist!';
-      // }
-
-      // const newPopulation = docSnap.data().population + 1;
-
       const forkRef = doc(collectionRef);
-      // batch.set(nycRef, { name: 'New York City' });
 
       transaction.set(forkRef, {
         ...payload,
@@ -215,9 +202,10 @@ export const forkChapter = async (chapterId, payload) => {
       transaction.update(docRef, {
         numChildren: increment(1),
       });
-      // transaction.update(docRef, { population: newPopulation });
+      returnObj = { id: forkRef.id, ...payload };
     });
     console.log('Transaction successfully committed!');
+    return returnObj;
   } catch (e) {
     console.log('Transaction failed: ', e);
   }

@@ -3,16 +3,18 @@ import Navigation from '@/components/Navigation';
 import PageBody from '@/components/PageBody';
 import { AuthContext } from '@/components/Providers';
 import { addChapter } from '@/lib/firebase/api';
+import { useRouter } from 'next/navigation';
 import { useContext, useEffect, useState } from 'react';
 
 const Post = () => {
+  const router = useRouter();
   const [title, setTitle] = useState('');
   const [document, setDocument] = useState('');
   const [queueSave, setQueueSave] = useState(false);
   const { authUser } = useContext(AuthContext);
 
-  const handleSubmit = () => {
-    addChapter({
+  const handleSubmit = async () => {
+    const newChapter = await addChapter({
       title: title,
       content: document,
       author: authUser.public.displayName,
@@ -24,6 +26,7 @@ const Post = () => {
       numDecendants: 0,
       timeCreated: new Date(),
     });
+    router.push(`/chapter/${newChapter.id}`);
     // send to database
     // Reroute
   };
