@@ -160,9 +160,9 @@ export const forkChapter = async (chapterId, payload) => {
       const collectionRef = collection(db, 'chapters');
       const docRef = doc(collectionRef, chapterId);
 
-      await updateDoc(docRef, {
-        numChildren: increment(1),
-      });
+      // await updateDoc(docRef, {
+      //   numChildren: increment(1),
+      // });
 
       // const docSnap = await transaction.get(docRef);
 
@@ -178,6 +178,10 @@ export const forkChapter = async (chapterId, payload) => {
       transaction.set(forkRef, {
         ...payload,
         userRef: userDoc,
+      });
+
+      transaction.update(docRef, {
+        numChildren: increment(1),
       });
       // transaction.update(docRef, { population: newPopulation });
     });
