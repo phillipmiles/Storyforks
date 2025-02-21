@@ -4,8 +4,10 @@ import PageBody from '@/components/PageBody';
 import { AuthContext } from '@/components/Providers';
 import { addChapter, forkChapter, getChapter } from '@/lib/firebase/api';
 import { useContext, useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
 
-const Post = ({ params }) => {
+const Post = () => {
+  const { slug } = useParams<{ slug: string }>();
   const [title, setTitle] = useState('');
   const [document, setDocument] = useState('');
   const [queueSave, setQueueSave] = useState(false);
@@ -14,12 +16,12 @@ const Post = ({ params }) => {
 
   useEffect(() => {
     const run = async () => {
-      const result = await getChapter(params.slug);
+      const result = await getChapter(slug);
 
       setChapter({ ...result, contentParsed: result.content.split('\n') });
     };
     run();
-  }, [params]);
+  }, [slug]);
 
   const handleSubmit = () => {
     if (!chapter) return;

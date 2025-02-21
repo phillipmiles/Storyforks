@@ -10,9 +10,11 @@ import {
   getDocRef,
 } from '@/lib/firebase/api';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-const Chapter = ({ params }) => {
+const Chapter = () => {
+  const { slug } = useParams<{ slug: string }>();
   const [chapter, setChapter] = useState();
   const [ancestors, setAncestors] = useState([]);
 
@@ -20,22 +22,22 @@ const Chapter = ({ params }) => {
 
   useEffect(() => {
     const run = async () => {
-      const result = await getChapter(params.slug);
+      const result = await getChapter(slug);
       setChapter({ ...result, contentParsed: result.content.split('\n') });
     };
     run();
-  }, [params]);
+  }, [slug]);
 
   // Get next chapters
   useEffect(() => {
     // TODO - CAN LOAD THIS AS WE SCROLL CLOSER TO THE BOTTOM OF THE PAGE!!!
     const run = async () => {
       //
-      const children = await getChildrenChapters(params.slug);
+      const children = await getChildrenChapters(slug);
       setNextChapters(children);
     };
     run();
-  }, [params]);
+  }, [slug]);
 
   const handleShowPrevious = () => {
     const run = async () => {
@@ -79,7 +81,7 @@ const Chapter = ({ params }) => {
           ))}
         </div>
       )}
-      <Link href={`/chapter/${params.slug}/fork`}>Fork story</Link>
+      <Link href={`/chapter/${slug}/fork`}>Fork story</Link>
       <div>
         <h3>Continue reading</h3>
         {nextChapters.map((nextChapter) => (
